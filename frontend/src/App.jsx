@@ -10,14 +10,16 @@ import './index.css';
 function App() {
     return (
         <Router>
-            <div className='flex'>
+            <div className="flex min-h-screen">
                 <NavBar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    {/* <Route path="/projects" element={<Projects />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} /> */}
-                </Routes>
+                <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        {/* <Route path="/projects" element={<Projects />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} /> */}
+                    </Routes>
+                </div>
             </div>
         </Router>
     );

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/components/**/*.jsx"],
+  content: ["./src/components/**/*.jsx", "./src/views/**/*.jsx", "./src/**/*.jsx"], //you have to add the path to every folder you use tailwind classes
   theme: {
     colors: {
       'blue': '#4169E1',
@@ -15,24 +15,33 @@ export default {
       'red': '#ff4f4f',
       'white': '#ffffff',
       'black': '#000000',
-      'darkblue' : '#0C1428'
+      'darkblue' : '#0C1428',
+      'gradient1': '#132141',
+      'gradient2': '#132141',
+      'gradient3': '#6082B6',
+      
 
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
       
+      
+
+      
     },
 
     fontSize: {
       'xs': '0.75rem',     // Extra small font size
       'sm': '20px',    // Small font size
-      'base': '28px',      // Base font size
+      'base': '24px',
+      'type':  '36px',     // Base font size
       'lg': '32px',    // Large font size
       'xl': '48px',     // Extra large font size
       '2xl': '64px',     // 2 times extra large font size
-      '3xl': '96px',   // 3 times extra large font size
-      // Add your custom font sizes here
+      '3xl': '72px',
+      '4xl': '112px'  
+      
     },
 
     extend: {
