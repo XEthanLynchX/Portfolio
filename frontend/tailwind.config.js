@@ -51,7 +51,10 @@ export default {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
+      boxShadow: {
+        'glow': '0 4px 15px rgba(96, 130, 182, 0.8)', // Adjust the color and size as needed
+      },
     }
   },
   plugins: [
