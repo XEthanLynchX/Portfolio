@@ -7,7 +7,7 @@ import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa';
 import work from '../media/work.gif';
 
 const Home = () => {
-    const words = ["Professional Skills"];
+    
 
     return (
         <div className="p-10 bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3 min-h-screen w-full">
@@ -65,9 +65,8 @@ const Home = () => {
                 >
                     <div className="bg-darkblue text-white p-10 rounded-lg shadow-md hover:shadow-glow flex flex-col space-y-8 h-full">
                         <div>
-                            <h2 className="text-type font-semibold text-white inline-flex mt-16">
-                                <span>The&nbsp;</span>
-                                <FlipWords words={['Ultimate Software Developer', 'Innovative Problem Solver', 'Creative Tech Visionary']} duration={5500} />
+                            <h2 className="text-type font-semibold text-white inline-flex mt-16">                               
+                                <FlipWords words={['Ultimate Software Developer', 'Innovative Problem Solver', 'Creative Tech Visionary']} duration={3500} />
                                 <span> </span>
                             </h2>
                         </div>

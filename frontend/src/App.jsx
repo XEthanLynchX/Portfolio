@@ -1,26 +1,78 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
-// import Projects from './views/Projects';
+import Projects from './views/Projects';
 // import About from './views/About';
 // import Contact from './views/Contact';
 import './index.css';
 
+const pageVariants = {
+    initial: {
+        opacity: 0,
+        x: "-100vw"
+    },
+    in: {
+        opacity: 1,
+        x: 0
+    },
+    out: {
+        opacity: 0,
+        x: "100vw"
+    }
+};
+
+const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.5
+};
+
 function App() {
+    const location = useLocation();
+
     return (
-        <Router>
-            <div className="flex flex-col md:flex-row min-h-screen">
-                <NavBar />
-                <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        {/* Other routes */}
+        <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3">
+            <NavBar />
+            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto">
+                <AnimatePresence mode="wait">
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={
+                            <motion.div
+                                initial="initial"
+                                animate="in"
+                                exit="out"
+                                variants={pageVariants}
+                                transition={pageTransition}
+                            >
+                                <Home />
+                            </motion.div>
+                        } />
+                        <Route path="/projects" element={
+                            <motion.div
+                                initial="initial"
+                                animate="in"
+                                exit="out"
+                                variants={pageVariants}
+                                transition={pageTransition}
+                            >
+                                <Projects />
+                            </motion.div>
+                        } />
+                        {/* <Route path="/about" element={<About />} /> */}
+                        {/* <Route path="/contact" element={<Contact />} /> */}
                     </Routes>
-                </div>
+                </AnimatePresence>
             </div>
-        </Router>
+        </div>
     );
 }
 
-export default App;
+const AppWrapper = () => (
+    <Router>
+        <App />
+    </Router>
+);
+
+export default AppWrapper;

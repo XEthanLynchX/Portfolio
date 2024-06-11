@@ -40,7 +40,10 @@ export default {
       'xl': '48px',     // Extra large font size
       '2xl': '64px',     // 2 times extra large font size
       '3xl': '72px',
-      '4xl': '112px'  
+      '4xl': '112px' ,
+      '5xl': '144px',
+      '6xl': '192px',
+
       
     },
 
