@@ -10,7 +10,7 @@ const Home = () => {
     
 
     return (
-        <div className="p-10 bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3 min-h-screen w-full">
+        <div className="p-10 bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3 min-h-screen w-full font-cambria">
             <h1 className='text-3xl text-white mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -106,22 +106,22 @@ const Home = () => {
                 >
                     <div className="bg-darkblue text-white p-10 rounded-lg shadow-md hover:shadow-glow h-full">
                         <h2 className="text-2xl font-semibold mb-4 ">Full-Stack Development</h2>
-                        <p className="text-gray text-base mb-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
-                        <div className="flex space-x-6 justify-center mt-32">
+                        <p className="text-gray text-base mb-8 ">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
+                        <div className="flex space-x-6 justify-center  ">
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaPython size={40} color="#3776AB" />
+                                <FaPython size={60} color="#3776AB" />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaReact size={40} color="#61DAFB" />
+                                <FaReact size={60} color="#61DAFB" />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaNodeJs size={40} color="#68A063" />
+                                <FaNodeJs size={60} color="#68A063" />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <SiMysql size={40} color="#4479A1" />
+                                <SiMysql size={60} color="#4479A1" />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <SiMongodb size={40} color="#47A248" />
+                                <SiMongodb size={60} color="#47A248" />
                             </motion.div>
                         </div>
                     </div>

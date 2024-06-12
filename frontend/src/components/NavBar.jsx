@@ -11,7 +11,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className={`flex flex-col w-1/3 items-center p-5 bg-darkblue transition-all duration-500 ease-in-out  md:sticky top-0 h-screen ${isOpen ? 'w-full' : 'md:w-1/2 w-full'}`}>
+        <div className={`flex flex-col w-1/3 items-center p-5 bg-darkblue transition-all duration-500 ease-in-out  md:sticky top-0 h-screen ${isOpen ? 'w-full' : 'w-1/6'} font-cambria`}>
             <div className="md:hidden w-full flex justify-between items-center mb-6">
               
                 <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
