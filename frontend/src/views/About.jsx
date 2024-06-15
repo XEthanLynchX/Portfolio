@@ -14,12 +14,18 @@ const About = () => {
 
       <div className="text-left w-1/2 mt-16">
         <h3 className="text-gray ">Summary</h3>
-        <h2 className="text-type font-bold">Studying Computer Science & freelancing in tech </h2>
-        <p className="text-white text-base mb-24">Thanks to my studies in software development and growing my soft skills, I connect with clients in order to make memorable web experiences.  </p>
+        <h2 className="text-type font-bold mb-4">Studying Computer Science & freelancing in tech </h2>
+
+        <p className="text-white text-base mb-4">Thanks to my studies in software development and growing my soft skills, I connect with clients in order to make memorable web experiences. </p>
+        <p className="text-white text-base mb-4 ">Currently, I'm working on many personal/client projects to continously improve upon my technical skills and networking to meet new people and potetial clients.</p>
+        <p className="text-white text-base mb-4">Outside of that, I attend <a href="https://www.kennesaw.edu/" className="no-underline-hover" target="_blank" rel="noopener noreferrer">KSU</a> where I'm pursuing my bacherlor's in computer science.</p>
+        <p className="text-white text-base mb-4">I have always had a love for a technology and an itch for creativity, which is where I found my passion and love for coding and web design.</p>
+        <p className="text-white text-base mb-24">A gift and a curse, I am a people pleaser so designing the best and most user friendly sites are very important to me and not only for the user but for my clients.</p>
 
         <h3 className="text-gray ">Background Story</h3>
         <h2 className="text-xl font-bold">blah blah</h2>
         <p></p>
+        <p className="text-white text-base mb-24">A gift and a curse, I am a people pleaser so designing the best and most user friendly sites are very important to me and not only for the user but for my clients.</p>
 
         <h3 className="text-gray text-bold text-2xl">Why Full-Stack?</h3>
         <h2 className="text-base font-bold">blah blah </h2>

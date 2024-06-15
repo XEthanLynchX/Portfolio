@@ -34,13 +34,13 @@ export default {
     },
 
     fontSize: {
-      'xs': '0.75rem',     // Extra small font size
-      'sm': '20px',    // Small font size
+      'xs': '0.75rem',    
+      'sm': '20px',    
       'base': '24px',
-      'type':  '36px',     // Base font size
-      'lg': '32px',    // Large font size
-      'xl': '48px',     // Extra large font size
-      '2xl': '64px',     // 2 times extra large font size
+      'lg': '32px',
+      'type':  '36px',  
+      'xl': '48px',     
+      '2xl': '64px',     
       '3xl': '72px',
       '4xl': '112px' ,
       '5xl': '144px',
