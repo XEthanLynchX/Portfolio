@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WorkDisplay from '../components/WorkDisplay';
 import work from '../media/work.gif';
+import '../styling/ProjectsStyling.css';
 
 const projectsData = [
     {
@@ -29,6 +30,7 @@ const Projects = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [count, setCount] = useState(1);
 
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -48,20 +50,45 @@ const Projects = () => {
         };
     }, [lastScrollPosition]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount((prevCount) => (prevCount < 4 ? prevCount + 1 : prevCount));
+        }, 1000); // Change count every 1 second
+
+        return () => clearInterval(interval); // Clean up on unmount
+    }, []);
+
     return (
-        <div className="p-10 bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3 min-h-screen w-full mt-12 leading font-cambria">
-            <h1 className='text-4xl text-white mb-12 font-bold text-center'>SELECTED WORKS / <span className='text-4xl text-gradient3 mb-12 font-bold '>(4)</span></h1>
-            <div className="w-full flex items-center justify-center relative  fixed">
-                <div className={`text-6xl text-left font-bold text-gray-500 fixed top-1/4 left-1 transition-transform duration-300 ease-in-out mb-24 ${isAnimating ? 'flip-animation' : ''} transform translate-x-1/2`}>
-                    <div>
-                        <p></p>{Math.floor(scrollPosition / 1000) % 80}
-                    </div>
+        <div className="p-10  w-full mt-12 leading font-cambria">
+            <h1 className='text-4xl text-white mb-12 font-bold text-center'>
+                SELECTED WORKS /
+                <span className='text-4xl text-gradient3 mb-12 font-bold '>
+                    ({count})
+                </span>
+            </h1>
+
+            <div className='grid md:grid-cols-3 mb-12'>
+                <div className='col-span-1'></div>
+
+                <div className='col-span-2 ml-16 inline-block text-xl text-gray'>
+                    <p>(Projects)</p>
+                    <p className='text-base w-2/3'>Featured projects that have been meticulously crafted with passion and purpose over the years.</p>
                 </div>
             </div>
-            <div className="w-full mb-24 overflow-y-auto p-10">
-                {projectsData.map((project, index) => (
-                    <WorkDisplay key={index} {...project} />
-                ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 overflow-y:auto numberf">
+                {/* number animation */}
+                <div className="col-span-1 overflow-y:auto  sticky h-full">
+                    <div className={`w-full text-6xl font-bold text-center duration-300 ease-in-out ${isAnimating ? 'flip-animation' : ''}`}>
+                        <p className='numberf'>0{Math.floor(scrollPosition / 100) % 10}.</p>
+                    </div>
+                </div>
+
+                <div className="col-span-2 w-full p-10">
+                    {projectsData.map((project, index) => (
+                        <WorkDisplay key={index} {...project} />
+                    ))}
+                </div>
             </div>
         </div>
     );

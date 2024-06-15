@@ -1,0 +1,27 @@
+/* YourStylesheet.css or index.css */
+.background {
+  position: fixed; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 0%, transparent 40%, #1520b626 70%);
+  transition: 0.3s;
+  z-index: -1; /* Ensure it stays behind other content */
+  background-color: #132141;
+}
+
+/* CustomCursor.css */
+.light {
+  position: absolute;
+  width: 300px; /* Increased size */
+  height: 300px; /* Increased size */
+  background: radial-gradient(circle, rgb(255, 255, 255), transparent 70%);
+  border-radius: 100%;
+  pointer-events: none; /* Prevents interaction */
+  mix-blend-mode: overlay;
+  transform: translate(-25%, -25%); /* Center the cursor */
+  transition: transform 0.1s ease-out;
+}
+
+

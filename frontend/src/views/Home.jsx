@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import TypingAnimation from '../components/TypingAnimation';
 import { FlipWords } from '../components/FlipWords';
 import { SiMongodb, SiMysql, SiJavascript } from 'react-icons/si';
 import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa';
@@ -10,7 +9,7 @@ const Home = () => {
     
 
     return (
-        <div className="p-10 bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3 min-h-screen w-full font-cambria">
+        <div className="p-10 min-h-screen w-full font-cambria">
             <h1 className='text-3xl text-white mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -21,7 +20,7 @@ const Home = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="bg-darkblue text-white p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-3xl font-semibold mb-2">2 <span className='text-base'>Years</span></h2>
+                            <h2 className="sm:text-xl text-3xl font-semibold mb-2">2 <span className='text-base'>Years</span></h2>
                             <p className="text-gray text-base">Experience</p>
                         </div>
                     </motion.div>
@@ -66,7 +65,7 @@ const Home = () => {
                     <div className="bg-darkblue text-white p-10 rounded-lg shadow-md hover:shadow-glow flex flex-col space-y-8 h-full">
                         <div>
                             <h2 className="text-type font-semibold text-white inline-flex mt-16">                               
-                                <FlipWords words={['Ultimate Software Developer', 'Innovative Problem Solver', 'Creative Tech Visionary']} duration={3500} />
+                                <FlipWords words={['Ultimate Software Developer ', 'Innovative Problem Solver ', 'Creative Tech Visionary ']} duration={3500} />
                                 <span> </span>
                             </h2>
                         </div>

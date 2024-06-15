@@ -4,9 +4,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Projects from './views/Projects';
-// import About from './views/About';
+import About from './views/About';
 // import Contact from './views/Contact';
 import './index.css';
+import BackgroundWithHoverEffect from './components/Bg';
 
 const pageVariants = {
     initial: {
@@ -33,9 +34,10 @@ function App() {
     const location = useLocation();
 
     return (
-        <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-b from-gradient1 via-gradient2 via-40% to-gradient3">
+        <div className="flex flex-col md:flex-row min-h-screen ">
+            <BackgroundWithHoverEffect />
             <NavBar />
-            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto">
+            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y: auto ">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={
@@ -60,7 +62,18 @@ function App() {
                                 <Projects />
                             </motion.div>
                         } />
-                        {/* <Route path="/about" element={<About />} /> */}
+                        <Route path="/about" element={
+                            <motion.div
+                            initial="initial"
+                            animate="in"
+                            exit="out"
+                            variants={pageVariants}
+                            transition={pageTransition}
+                        >
+                            
+                            <About />
+                            </motion.div>
+                        } />
                         {/* <Route path="/contact" element={<Contact />} /> */}
                     </Routes>
                 </AnimatePresence>

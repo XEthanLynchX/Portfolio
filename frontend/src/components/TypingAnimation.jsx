@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styling/HomeStyling.css';
-
+import '../styling/TypingCursor.css';
 
 const TypingAnimation = () => {
   const [text, setText] = useState('');
@@ -8,35 +7,31 @@ const TypingAnimation = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const words = ["Your Ultimate Software Developer" ,"Crafting Innovative Solutions","Building User-Friendly Applications" ];
-  
+  const words = ["Hi there, I'm Ethan Lynch"];
+
   useEffect(() => {
     let timer;
     const handleTyping = () => {
       const currentWord = words[loopNum % words.length];
       setText(
-        isDeleting
-          ? currentWord.substring(0, text.length - 1)
-          : currentWord.substring(0, text.length + 1)
+        currentWord.substring(0, text.length + 1)
       );
-
-      setTypingSpeed(isDeleting ? 75 : 150);
-
-      if (!isDeleting && text === currentWord) {
-        setTimeout(() => setIsDeleting(true), 500);
-      } else if (isDeleting && text === '') {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
+  
+      if (text === currentWord) {
+        clearTimeout(timer); // Stop the typing effect once the word is fully typed
+        return; // Exit the function to prevent further typing
       }
+  
+      timer = setTimeout(handleTyping, typingSpeed);
     };
-
+  
     timer = setTimeout(handleTyping, typingSpeed);
-
+  
     return () => clearTimeout(timer);
-  }, [text, isDeleting]);
+  }, [text, typingSpeed, loopNum, words]);
 
   return (
-    <h2 className="text-type font-semibold text-white">
+    <h2 className=" text-xl font-semibold text-white font-cambria ">
       {text}
       <span className="blinking-cursor">|</span>
     </h2>
