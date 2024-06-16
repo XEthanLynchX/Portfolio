@@ -33,6 +33,10 @@ export default {
       
     },
 
+    textShadow: {
+      'default': '2px 2px 4px rgba(0,0,0,0.5)',
+    },
+
     fontSize: {
       'xs': '0.75rem',    
       'sm': '20px',    

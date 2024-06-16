@@ -11,12 +11,15 @@ const NavBar = () => {
     };
 
     return (
-        <div className={`flex flex-col w-1/3 items-center p-5 bg-darkblue transition-all duration-500 ease-in-out  md:sticky top-0 h-screen ${isOpen ? 'w-full' : 'w-1/6'} font-cambria`}>
+        <div className={`flex flex-col  items-center p-5 bg-darkblue transition-all duration-500 ease-in-out  md:sticky top-0 h-screen ${isOpen ? 'w-full' : 'w-full'} font-cambria`}>
             <div className="md:hidden w-full flex justify-between items-center mb-6">
               
                 <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
+                    IP{
+                        
+                    }
             </div>
             <div className={`flex flex-col items-center ${isOpen ? 'block' : 'hidden md:block'}`}>
                 <div className="text-center mb-6">
@@ -42,13 +45,13 @@ const NavBar = () => {
                         <FaFileAlt className="text-xl text-white hover:text-yellow" />
                     </a>
                 </div>
-                <nav className="w-full">
-                    <div className="mb-5">
+                <nav className="w-full text-base">
+                    <div className="mt-12 mb-5">
                         <Link to="/" className="flex items-center text-lg p-3 hover:bg-gray-700">
                             <button className="btn btn-outline w-full"><FaHome className="mr-3" /> Home</button>
                         </Link>
                     </div>
-                    <div className="mb-5 w">
+                    <div className="mb-5 ">
                         <Link to="/projects" className="flex items-center text-lg p-3 hover:bg-gray-700">
                             <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
                         </Link>
