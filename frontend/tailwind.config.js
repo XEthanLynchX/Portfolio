@@ -26,12 +26,8 @@ export default {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
       cambria: ['Cambria', 'serif'],
-
-      
-      
-
-      
     },
+    
 
     textShadow: {
       'default': '2px 2px 4px rgba(0,0,0,0.5)',
@@ -64,7 +60,9 @@ export default {
       boxShadow: {
         'glow': '0 4px 15px rgba(96, 130, 182, 0.8)', // Adjust the color and size as needed
       },
-    }
+    },
+
+    
   },
   plugins: [
     require('daisyui'),
