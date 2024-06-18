@@ -8,9 +8,9 @@ import work from '../media/work.gif';
 const Home = () => {
     return (
         <div className="p-4 md:p-10 min-h-screen w-full font-cambria">
-            <h1 className='text-xl md:text-3xl text-white mb-4 md:mb-12 font-bold'>Professional Skills</h1>
+            <h1 className='text-type md:text-3xl text-white mb-4 md:mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 smd:gap-8">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}

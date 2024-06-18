@@ -25,4 +25,14 @@
   color: yellow; /* Keeps text yellow always */
 }
 
+.no-underline-hoverBlue:hover {
+  text-decoration: underline;
+  color: rgb(0, 153, 255); /* Keeps text yellow always */
+}
+
+.no-underline-hoverBlue {
+  text-decoration: none;
+  color: rgb(0, 153, 255); /* Keeps text yellow always */
+}
+
 

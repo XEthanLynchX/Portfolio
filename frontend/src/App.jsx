@@ -36,10 +36,10 @@ function App() {
     return (
         <div className="flex flex-col md:flex-row min-h-screen ">
             <BackgroundWithHoverEffect />
-            <div className="w-96 ">
+            <div className="w-96 z-50 md:static fixed">
                 <NavBar />
             </div>
-            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y: auto sm:-mt-96 md:mt-0 ">
+            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y: auto sm: mt-32 md:mt-0 ">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={

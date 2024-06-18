@@ -51,6 +51,8 @@ export default {
 
     extend: {
       spacing: {
+        '6xl': '32rem',
+        '7xl': '80rem',
         '8xl': '96rem',
         '9xl': '128rem',
       },

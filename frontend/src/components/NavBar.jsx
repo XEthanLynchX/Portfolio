@@ -18,7 +18,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="md:sticky top-0 h-screen font-cambria">
+    <div className="md:sticky sm:fixed top-0 h-screen font-cambria">
       {/* Header Section */}
       <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
         <div className="flex items-center">
