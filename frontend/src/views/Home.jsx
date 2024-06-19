@@ -7,8 +7,8 @@ import work from '../media/work.gif';
 
 const Home = () => {
     return (
-        <div className="p-4 md:p-10 min-h-screen w-full font-cambria">
-            <h1 className='text-type md:text-3xl text-white mb-4 md:mb-12 font-bold'>Professional Skills</h1>
+        <div className="p-4 mb-64 md:mb-0 md:p-10 min-h-screen w-full font-cambria">
+            <h1 className='text-type md:text-3xl text-white mb-8 md:mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 smd:gap-8">
                     <motion.div
@@ -18,7 +18,7 @@ const Home = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="bg-darkblue text-white p-4 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2">2 <span className='text-sm md:text-base'>Years</span></h2>
+                            <h2 className="text-xl md:text-3xl font-semibold md:mb-2">2 <span className='text-sm md:text-base'>Years</span></h2>
                             <p className="text-gray text-sm md:text-base">Experience</p>
                         </div>
                     </motion.div>
@@ -29,7 +29,7 @@ const Home = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="bg-darkblue text-white p-4 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-xl md:text-3xl font-semibold mb-1 md:mb-2">10+</h2>
+                            <h2 className="text-xl md:text-3xl font-semibold  md:mb-2">10+</h2>
                             <p className="text-gray text-sm md:text-base">Completed Projects</p>
                         </div>
                     </motion.div>
@@ -60,7 +60,7 @@ const Home = () => {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow flex flex-col space-y-4 md:space-y-8 h-full">
+                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow flex flex-col space-y-4 md:space-y-8 h-full mt-8 md:mt-0">
                         <div>
                             <h2 className="text-lg md:text-xl font-semibold text-white inline-flex mt-4 md:mt-16">
                                 <FlipWords words={['Ultimate Software Developer ', 'Innovative Problem Solver ', 'Creative Tech Visionary ']} duration={3500} />
@@ -82,7 +82,7 @@ const Home = () => {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow">
+                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow mt-24 md:mt-0">
                         <h2 className="text-xl md:text-3xl font-semibold mb-2 md:mb-4">Featured Projects</h2>
                         <div className="flex justify-center items-center text-sm md:text-base font-semibold text-blue mb-4 md:mb-8">
                             <a href="#projects" className="flex justify-center items-center text-blue-500">
@@ -101,7 +101,7 @@ const Home = () => {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow h-full">
+                    <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow h-full mt-24 md:mt-0">
                         <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Full-Stack Development</h2>
                         <p className="text-gray text-sm md:text-base mb-4 md:mb-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
                         <div className="flex space-x-4 md:space-x-6 justify-center">

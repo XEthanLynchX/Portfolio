@@ -78,13 +78,13 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 overflow-y:auto numberf">
                 {/* number animation */}
-                <div className="col-span-1 overflow-y:auto  sticky h-full">
+                <div className="col-span-1 overflow-y:auto fixed h-1/5">
                     <div className={`w-full text-6xl font-bold text-center duration-300 ease-in-out ${isAnimating ? 'flip-animation' : ''}`}>
                         <p className='numberf'>0{Math.floor(scrollPosition / 100) % 10}.</p>
                     </div>
                 </div>
 
-                <div className="col-span-2 w-full p-10">
+                <div className="col-span-2 w-full p-10 ml-6xl">
                     {projectsData.map((project, index) => (
                         <WorkDisplay key={index} {...project} />
                     ))}
