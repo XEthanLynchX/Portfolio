@@ -5,9 +5,12 @@ import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Projects from './views/Projects';
 import About from './views/About';
-// import Contact from './views/Contact';
+import Contact from './views/Contact';
 import './index.css';
 import BackgroundWithHoverEffect from './components/Bg';
+
+import { useState } from 'react'
+
 
 const pageVariants = {
     initial: {
@@ -32,14 +35,15 @@ const pageTransition = {
 
 function App() {
     const location = useLocation();
+    const [loading, setLoading] = useState(true);
 
     return (
         <div className="flex flex-col md:flex-row min-h-screen ">
             <BackgroundWithHoverEffect />
-            <div className="w-96 z-50 md:static fixed">
+            <div className="w-full md:w-72 z-50 md:static fixed">
                 <NavBar />
             </div>
-            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y: auto sm: mt-32 md:mt-0 ">
+            <div className="flex-grow min-h-screen overflow-x-hidden overflow-y:auto md:w-4/5 sm: mt-32 md:mt-0 ">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={
@@ -53,6 +57,7 @@ function App() {
                                 <Home />
                             </motion.div>
                         } />
+
                         <Route path="/projects" element={
                             <motion.div
                                 initial="initial"
@@ -64,6 +69,7 @@ function App() {
                                 <Projects />
                             </motion.div>
                         } />
+                        
                         <Route path="/about" element={
                             <motion.div
                             initial="initial"
@@ -74,6 +80,19 @@ function App() {
                         >
                             
                             <About />
+                            </motion.div>
+                        } />
+                    
+                        <Route path="/contact" element={
+                            <motion.div
+                            initial="initial"
+                            animate="in"
+                            exit="out"
+                            variants={pageVariants}
+                            transition={pageTransition}
+                        >
+                            
+                            <Contact />
                             </motion.div>
                         } />
                         {/* <Route path="/contact" element={<Contact />} /> */}

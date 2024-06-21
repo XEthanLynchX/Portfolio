@@ -48,6 +48,25 @@ export default {
 
       
     },
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '1025px',
+      // => @media (min-width: 768px) { ... }
+      
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    }
+    ,
+    
 
     extend: {
       spacing: {
@@ -62,6 +81,8 @@ export default {
       boxShadow: {
         'glow': '0 4px 15px rgba(96, 130, 182, 0.8)', // Adjust the color and size as needed
       },
+
+      
     },
 
     

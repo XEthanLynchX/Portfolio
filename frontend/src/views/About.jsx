@@ -33,7 +33,9 @@ const About = () => {
         
         <div>
           <p className="text-white text-base mb-6">Computers have always been a passion of mine, from building my PC when I was 15 to creating the page you're reading right now. As I was exploring career paths during my final months of high school, I discovered programming.</p>
-          <p className="text-white text-base mb-6">After high school, I decided not to go straight to college and took the bootcamp route, where I learned a substantial amount about coding. However, with the industry's demands, I knew it wasn't enough. I kept creating personal projects and have now moved on to professional relationships.</p>
+          <p className="text-white text-base mb-6">After high school, I decided not to go straight to college and took the bootcamp route, where I learned a substantial amount about coding. 
+          </p>
+          <p className="text-white text-base mb-6">However, with the industry's demands, I knew it wasn't enough. I kept creating personal projects and have now moved into professional relationships.</p>
           <p className="text-white text-base mb-32">My curiosity has led me to shift towards machine learning, especially with the rise of AI in today's world.</p>
         </div>
 

@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, transparent 0%, transparent 40%, #1520b626 70%);
+  background: radial-gradient(circle, transparent 0%, transparent 40%, #848dff26 70%);
   transition: 0.3s;
   z-index: -1; /* Ensure it stays behind other content */
   background-color: #132141;

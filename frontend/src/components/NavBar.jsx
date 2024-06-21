@@ -18,7 +18,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="md:sticky sm:fixed top-0 h-screen font-cambria">
+    <div className="md:sticky sm:fixed top-0 h-screen font-cambria w-full">
       {/* Header Section */}
       <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
         <div className="flex items-center">
@@ -34,7 +34,7 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={`fixed top-0 left-0 w-full z-50 bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden`}>
+      <div className={`fixed top-24 left-0 w-full z-50 bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden`}>
         <nav className="w-full text-base p-5">
           <div className="mt-4 ">
             <Link to="/" className="flex items-center mt-24 text-lg p-3 hover:bg-gray-700 mb-5" onClick={handleClick}>
@@ -42,7 +42,7 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="mb-5">
-            <Link to="/projects" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
+            <Link to="/projects" className="flex items-center text-lg p-3 bg-gradient-to-br from-gradient1to-blue-500 hover:bg-gradient-to-bl" onClick={handleClick}>
               <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
             </Link>
           </div>

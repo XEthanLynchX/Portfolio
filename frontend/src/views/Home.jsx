@@ -10,7 +10,7 @@ const Home = () => {
         <div className="p-4 mb-64 md:mb-0 md:p-10 min-h-screen w-full font-cambria">
             <h1 className='text-type md:text-3xl text-white mb-8 md:mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 smd:gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-8 smd:gap-8">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -40,7 +40,7 @@ const Home = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="bg-darkblue text-white p-4 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-lg md:text-xl font-semibold mb-1 md:mt-12">Full-Stack Expert</h2>
+                            <h2 className="text-type xl:text-xl font-semibold mb-1 md:mt-12">Full-Stack Expert</h2>
                         </div>
                     </motion.div>
                     <motion.div
@@ -49,8 +49,8 @@ const Home = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="bg-darkblue text-white p-4 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-lg md:text-xl font-semibold mb-1 md:mb-2">Certified Software Developer</h2>
+                        <div className="bg-darkblue text-white  md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
+                           <h2 className="text-lg 2xl:text-xl font-semibold mb-1 md:mb-2">Certified Software Developer</h2> 
                         </div>
                     </motion.div>
                 </div>

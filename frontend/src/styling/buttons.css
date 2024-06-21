@@ -1,0 +1,7 @@
+/* Define a custom class for the hover effect */
+.hover-gradient-effect:hover {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+  --tw-gradient-from: #6b46c1; /* from-purple-600 */
+  --tw-gradient-to: #3b82f6; /* to-blue-500 */
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
