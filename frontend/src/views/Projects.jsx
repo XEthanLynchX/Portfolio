@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import WorkDisplay from '../components/WorkDisplay';
 import work from '../media/work.gif';
 import '../styling/ProjectsStyling.css';
+import SwipeableViews from 'react-swipeable-views';
+import  TabIndicator  from '../components/Indicator';
 
 const projectsData = [
     {
@@ -27,80 +29,48 @@ const projectsData = [
 ];
 
 const Projects = () => {
-    const [isAnimating, setIsAnimating] = useState(false);
-    const [count, setCount] = useState(1);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [nextCount, setNextCount] = useState(count);
 
-    const nextProject = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        const newCount = (count < projectsData.length) ? count + 1 : 1;
-        setNextCount(newCount);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length); 
-            setIsAnimating(false);
-            setCount(newCount);
-            // Reset isAnimating after the animation completes
-        }, 400); // Match duration to animation time
+    const handleClick = (index) => {
+        setCurrentIndex(index); // Assuming setCurrentIndex updates the state in the parent component
     };
 
-    const prevProject = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        const newCount = (count > 1) ? count - 1 : projectsData.length;
-        setNextCount(newCount);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
-            setCount(newCount);
-            setIsAnimating(false); // Reset isAnimating after the animation completes
-        }, 400); // Match duration to animation time
+    const handleChangeIndex = (index) => {
+        setCurrentIndex(index);
     };
 
     return (
-        <div className="p-10 w-full mt-12 leading font-cambria ">
-            <h1 className='text-4xl text-white mb-12 font-bold text-center'>
-                SELECTED WORKS /
-                <span className='text-4xl text-gradient3 mb-12 font-bold '>
-                    ({count})
+        <div className="p-4 md:p-10 w-full mt-12 leading font-cambria ">
+            <h1 className='text-3xl md:text-4xl text-white mb-6 md:mb-12 font-bold text-center'>
+                SELECTED WORKS | 
+                <span className='text-3xl md:text-4xl text-white mb-6 md:mb-12 font-bold '>
+                    {currentIndex + 1}
                 </span>
             </h1>
 
-            <div className='grid md:grid-cols-3 mb-12'>
-                <div className='col-span-1'></div>
+            <div className='grid md:grid-cols-3 mb-6 md:mb-12'>
+                <div className='col-span-'></div>
 
-                <div className='col-span-2 ml-16 inline-block text-xl text-gray'>
+                <div className='col-span-3 ml-0 md:ml-64 inline-block text-base md:text-xl text-gray'>
                     <p>(Projects)</p>
-                    <p className='text-base w-2/3'>Featured projects that have been meticulously crafted with passion and purpose over the years.</p>
+                    <p className='text-sm md:text-base w-full md:w-2/3'>
+                        Featured projects that have been meticulously crafted with passion and purpose over the years.
+                    </p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 md:grid-cols-3 h-full">
-                {/* Number animation */}
-                <div className="col-span-1 h-screen sticky top-0 flex items-center justify-center flip-container">
-                    <div className={`flip-number ${isAnimating ? 'flip-animation' : ''}`}>
-                        <div className="flipper text-2xl">
-                            <div className="front">
-                                0{count}
-                            </div>
-                            <div className="back">
-                                0{nextCount}
-                            </div>
+            <div className='grid grid-col-1'>
+                <SwipeableViews index={currentIndex} onChangeIndex={handleChangeIndex} enableMouseEvents>
+                    {projectsData.map((project, index) => (
+                        <div key={index} className="swipeableView">
+                            <WorkDisplay {...project} className="w-3/4 h-3/4" />
                         </div>
-                    </div>
-                </div>
-
-                {/* This is the container that should take up the remaining space */}
-                <div className="col-span-2 w-full p-10 flex items-center justify-center relative flex-grow">
-                    <button onClick={prevProject} className="absolute left-0 z-10 p-2 bg-gray-800 text-white rounded-full">
-                        &#8592;
-                    </button>
-                    <WorkDisplay key={currentIndex} {...projectsData[currentIndex]} className="w-full h-full" />
-                    <button onClick={nextProject} className="absolute right-0 z-10 p-2 bg-gray-800 text-white rounded-full">
-                        &#8594;
-                    </button>
-                </div>
-            </div>
+                    ))}
+                </SwipeableViews>
+           
+           
+                <TabIndicator count={projectsData.length} currentIndex={currentIndex} handleClick={handleClick} />
+             </div>
         </div>
     );
 };
