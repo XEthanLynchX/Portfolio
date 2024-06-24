@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const WorkDisplay = ({ image, name, technologies }) => {
     return (
-        <div className="  text-white p-8 rounded-lg shadow-md hover:shadow-glow mb-24 w-full">
+        <div className="  text-white p-8 rounded-lg shadow-md hover:shadow-glow mb-24 w-screen md:w-full">
             <img src={image} alt={name} className="w-screen rounded-lg mb-4" />
-            <h2 className="text-2xl font-semibold mb-2">{name}</h2>
+            <h2 className="md:text-2xl text- font-semibold mb-2">{name}</h2>
             <div className="flex space-x-2">
                 {technologies.map((tech, index) => (
                      <motion.div

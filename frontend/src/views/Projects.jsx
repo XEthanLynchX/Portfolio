@@ -63,7 +63,7 @@ const Projects = () => {
                 <SwipeableViews index={currentIndex} onChangeIndex={handleChangeIndex} enableMouseEvents>
                     {projectsData.map((project, index) => (
                         <div key={index} className="swipeableView">
-                            <WorkDisplay {...project} className="w-3/4 h-3/4" />
+                            <WorkDisplay {...project} className="md:w-3/4 md:h-3/4 w-2/3 h-full" />
                         </div>
                     ))}
                 </SwipeableViews>
