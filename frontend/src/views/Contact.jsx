@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CiPaperplane } from "react-icons/ci";
 import mailIcon from '../media/mailIcon.gif'; 
+import '../styling/fade.css';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,9 @@ const ContactForm = () => {
   const [status, setStatus] = useState('');
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
+  const sectionsRef = useRef([]);
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,11 +85,35 @@ const ContactForm = () => {
       setStatus('Error sending message.');
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sectionsRef.current.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sectionsRef.current
+        .filter(section => section !== null)
+        .forEach(section => observer.unobserve(section));
+    };
+  }, []);
   
   return (
-    <div className="px-2 py-20 lg:p-10 md:px-96 w-full" style={{ textShadow: '6px 6px 4px rgba(0,0,0,0.5)' }}>
-      <div className="hover:shadow-glow">
-        <div className="w-full lg:px-10 px-3 mx-auto text-left ">
+    <div className="px-2 py-20 lg:p-10 md:px-96 w-full  " style={{ textShadow: '6px 6px 4px rgba(0,0,0,0.5)' }} >
+      <div className="hover:shadow-glow fade-in" ref={el => sectionsRef.current.push(el)}>
+        <div className="w-full lg:px-10 px-3 mx-auto text-center  ">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient3">Contact</h2>
           <p className="text-base md:text-lg text-gray mb-8">I'm looking forward to hearing from you</p>
         </div>

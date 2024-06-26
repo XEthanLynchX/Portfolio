@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styling/TypingCursor.css';
+import '../styling/typingcursor.css';
 
 const TypingAnimation = () => {
   const [text, setText] = useState('');

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaHome, FaProjectDiagram, FaUserAlt, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGithub,  FaLinkedin, FaInstagram, FaFileAlt, FaHome, FaProjectDiagram, FaUserAlt, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { CgToolbox } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 
 import pfp from '../media/pfp.jpg';
@@ -44,6 +45,11 @@ const NavBar = () => {
           <div className="mb-5">
             <Link to="/projects" className="flex items-center text-lg p-3 bg-gradient-to-br from-gradient1to-blue-500 hover:bg-gradient-to-bl" onClick={handleClick}>
               <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
+            </Link>
+          </div>
+          <div className="mb-5">
+            <Link to="/services" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
+              <button className="btn btn-outline w-full"><CgToolbox className="mr-3" /> Services</button>
             </Link>
           </div>
           <div className="mb-5">
@@ -108,6 +114,11 @@ const NavBar = () => {
           <div className="mb-5">
             <Link to="/projects" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
               <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
+            </Link>
+          </div>
+          <div className="mb-5">
+            <Link to="/services" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
+              <button className="btn btn-outline w-full"><CgToolbox className="mr-3" /> Services</button>
             </Link>
           </div>
           <div className="mb-5">
