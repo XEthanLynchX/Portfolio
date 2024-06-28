@@ -5,12 +5,11 @@ const tl = gsap.timeline();
 export const preLoaderAnim = () => {
   tl.to("body", {
     duration: 0.1,
-  
     ease: "power3.inOut",
   })
     .to(".preloader", {
       duration: 0.05,
-      css: { overflowY: "hidden", height: "100vh" },
+      css: { overflowY: "hidden", height: "100vh", },
     })
     .to(".text-container", {
       duration: 0,
@@ -20,14 +19,14 @@ export const preLoaderAnim = () => {
     .from(".text-container span", {
       duration: 1.5,
       delay: 1,
-      y: 70,
+      y: 300,
       skewY: 10,
       stagger: 0.4,
       ease: "Power3.easeOut",
     })
     .to(".text-container span", {
       duration: 1,
-      y: 70,
+      y: -300,
       skewY: -20,
       stagger: 0.2,
       ease: "Power3.easeOut",
@@ -57,7 +56,7 @@ export const preLoaderAnim = () => {
       "-=2"
     )
     .to(".preloader", {
-      duration: 0,
+      duration: 1,
       css: { display: "none" },
     });
 };

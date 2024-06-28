@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CiPaperplane } from "react-icons/ci";
-import mailIcon from '../media/mailIcon.gif'; 
+import { CiPaperplane } from "react-icons/ci"; 
 import '../styling/fade.css';
 
 const ContactForm = () => {

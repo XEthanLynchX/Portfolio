@@ -33,6 +33,7 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1 {
@@ -71,11 +72,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-  /* index.css */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-}
+
 
 .flex {
   display: flex;

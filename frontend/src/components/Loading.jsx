@@ -9,12 +9,11 @@ const Preloader = () => {
   }, []);
   
   return (
-    <div className="preloader background h-screen">
-      <div className="text-container">
+    <div className="preloader ">
+      <div className="text-container w-screen">
         <span>Envison.</span>
         <span>Plan.</span>
         <span>Create.</span>
-        <span>Deploy.</span>
       </div>
     </div>
   );

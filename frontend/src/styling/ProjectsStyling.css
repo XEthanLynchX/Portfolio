@@ -1,7 +1,6 @@
-/* ProjectsStyling.css */
 
 .swipeableViewsContainer {
-  overflow: hidden; /* Hide overflow */
+  overflow: hidden; 
 }
 
 .swipeableView {
@@ -12,3 +11,40 @@
   width: 75%;
   margin-left: 10%;
 }
+
+.work-display-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-circle {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.work-display-container:hover .hover-circle {
+    display: flex;
+}
+
+.work-display-container:hover .hover-circle::after {
+    content: 'View';
+}
+
+@media (hover: none) {
+    .hover-circle {
+        display: none !important;
+    }
+}
+
+
