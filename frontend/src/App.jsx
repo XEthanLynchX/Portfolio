@@ -52,7 +52,7 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => setLoading(false), 4500); // Example timeout, adjust as needed
+        setTimeout(() => setLoading(false), 4000); // Example timeout, adjust as needed
     }, []);
 
     return (

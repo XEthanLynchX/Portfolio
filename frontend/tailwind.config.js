@@ -19,6 +19,13 @@ export default {
       'gradient1': '#132141',
       'gradient2': '#132141',
       'gradient3': '#6082B6',
+      'shade1': '#1d3262',
+      'shade2': '#264283',
+      'shade3': '#3053a4',
+      'shade4': '#3a64c5',
+      'shade5': '#5a7ecf',
+      
+
       
 
     },

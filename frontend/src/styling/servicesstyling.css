@@ -6,7 +6,7 @@
 }
 
 .text-container {
-  max-width: 500px;
+ 
   margin-right: 2rem;
 }
 
@@ -16,25 +16,29 @@
   max-width: 600px;
 }
 
-.laptop {
+.tab {
+  background-color: #3a64c5;
+  backdrop-filter: blur(20px);
+}
+
+.service-section {
   position: relative;
+  z-index: 2; /* Higher than the header */
+  background-color: #FFFFFF; /* Or any solid color that matches your design */
+  margin-top: /* Height of your header */; /* Adjust this so the content starts below the header */
 }
 
-.laptop-image {
+.header-container {
+  position: fixed; /* or 'absolute' if 'fixed' doesn't suit your layout */
+  top: 0;
+  left: 0;
   width: 100%;
-  border: 2px solid #000;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Lower than the service section */
 }
 
-.code-image {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  border-radius: 5px;
-}
+
+
+
 
 
 
