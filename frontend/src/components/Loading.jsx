@@ -10,7 +10,7 @@ const Preloader = () => {
   
   return (
     <div className="preloader background ">
-      <div className="text-container w-screen">
+      <div className="text-container w-full">
         <span>Envison.</span>
         <span>Plan.</span>
         <span>Create.</span>

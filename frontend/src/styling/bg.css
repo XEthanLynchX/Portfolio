@@ -1,14 +1,27 @@
-/* YourStylesheet.css or index.css */
+@keyframes lightingEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply lighting effect to a div */
 .background {
   position: fixed; /* Change to fixed to cover the entire viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, transparent 0%, transparent 40%, #848dff26 70%);
+  background: linear-gradient(270deg, #132141, #092566, #132141);
+  background-size: 600% 600%;
+  animation: lightingEffect 7s ease infinite;
   transition: 0.3s;
   z-index: -1; /* Ensure it stays behind other content */
-  background-color: #132141;
 }
 
 /* CustomCursor.css */

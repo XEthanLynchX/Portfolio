@@ -18,10 +18,10 @@
 .preloader .text-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height : 80px;
   width: 700px;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 800;
   overflow: hidden;
   color : white;

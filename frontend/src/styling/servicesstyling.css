@@ -1,40 +1,11 @@
-/* ServicesStyling.css */
 
-.services-container {
-  background-color: #1a1a1a;
-  padding: 2rem;
-}
 
-.text-container {
- 
-  margin-right: 2rem;
-}
 
-.image-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-}
 
-.tab {
-  background-color: #3a64c5;
-  backdrop-filter: blur(20px);
-}
 
-.service-section {
-  position: relative;
-  z-index: 2; /* Higher than the header */
-  background-color: #FFFFFF; /* Or any solid color that matches your design */
-  margin-top: /* Height of your header */; /* Adjust this so the content starts below the header */
-}
 
-.header-container {
-  position: fixed; /* or 'absolute' if 'fixed' doesn't suit your layout */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1; /* Lower than the service section */
-}
+
+
 
 
 
