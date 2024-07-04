@@ -58,7 +58,7 @@ const Services = () => {
 
         {/* Services */}
         <div className="servicesSection flex justify-center items-center relative z-20 mb-16">
-          <div className="relative w-4/5 relativeDiv">
+          <div className="relative w-4/5 ">
             <div className="absolute inset-0 z-0 rounded-lg"></div>
             <div className="relative z-10 flex flex-col justify-center items-center rounded-2xl p-4">
               {/* Header moved here, outside and above the cards container */}

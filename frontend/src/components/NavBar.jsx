@@ -39,7 +39,7 @@ const NavBar = () => {
             <p className="text-sm text-gray-400">Full-Stack Developer</p>
           </div>
         </div>
-        <button onClick={toggleNavigation} className="text-white text-sm pointer-events-auto">
+        <button onClick={toggleNavigation} className="text-white text-sm pointer-events-auto ">
           {openNavigation ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -92,7 +92,7 @@ const NavBar = () => {
 
      
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full">
+      <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full z-50 pointer-events-auto">
         <div className="text-center mb-6">
           <div className="avatar">
             <div className="w-48 h-48 rounded-full ring ring-offset-base-100 ring-offset-2">
