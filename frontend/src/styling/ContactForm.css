@@ -48,3 +48,47 @@
   text-align: center;
   color: #d9534f;
 }
+
+.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.form-control:focus {
+  border-bottom-color: #3a64c5;
+  outline: none;
+}
+.form-control:hover {
+  border-bottom-color: #3a64c5;
+  outline: none;
+}
+
+.text-gradient3 {
+  background: linear-gradient(90deg, #2c57bb 30%, #324c8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient3 {
+  background: linear-gradient(90deg, #2c57bb 30%, #324c8a 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.faq-gradient {
+  background: linear-gradient(90deg, #2c57bb 20%, #1c45a5 80%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+

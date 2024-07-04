@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CiPaperplane } from "react-icons/ci"; 
+import mail from '../media/mail.svg'; // Make sure to replace this with the actual path to your image
 import '../styling/fade.css';
+import '../styling/contactform.css'; // Import your CSS file for additional styling
+import FreqQuestions from '../components/FreqQuestions'; // Make sure to replace this with the actual path to your component
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,8 +20,6 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const sectionsRef = useRef([]);
-
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -110,42 +111,36 @@ const ContactForm = () => {
   }, []);
   
   return (
-    <div className="px-2 py-20 lg:p-10 md:px-96 w-full  " style={{ textShadow: '6px 6px 4px rgba(0,0,0,0.5)' }} >
-      <div className="hover:shadow-glow fade-in" ref={el => sectionsRef.current.push(el)}>
-        <div className="w-full lg:px-10 px-3 mx-auto text-center  ">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient3">Contact</h2>
-          <p className="text-base md:text-lg text-gray mb-8">I'm looking forward to hearing from you</p>
-        </div>
+    <div className="px-2 py-20 lg:p-10 w-screen">
+      <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
+        <div className="flex flex-col lg:flex-row w-full lg:px-10 px-3 mx-auto text-left lg:text-left">
+          <div className="lg:w-1/2 w-full lg:pr-10 ">
 
-        <div className="max-w-7xl mx-auto">
-          <div className="justify-items-center px-5 lg:px-10 py-10 rounded-sm max-w-3xl mx-auto flex-grow">
-            <form className="w-full" onSubmit={handleSubmit}>
+            <p className="text-sm md:text-base text-gray  ">Contact Me</p>
+            <h2 className="text-type md:text-2xl font-bold text-white mb-8 w-full md:w-4/5">Feel Free to <span className='text-gradient3'>get in touch</span> with me</h2>
+            
+            <form className="w-full md:w-2/3 " onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="first-name">
-                    First Name
-                  </label>
                   <input
-                    className="form-control appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm text-black py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 text-white py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="first-name"
                     name="firstName"
                     type="text"
-                    placeholder="Tony"
+                    placeholder="Your First Name"
                     value={formData.firstName}
                     onChange={handleChange}
                   />
                   {errors.firstName && <p className="text-red text-xs italic">{errors.firstName}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="last-name">
-                    Last Name
-                  </label>
+                  
                   <input
-                    className="form-control text-black appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="last-name"
                     name="lastName"
                     type="text"
-                    placeholder="Stark"
+                    placeholder="Your Last Name"
                     value={formData.lastName}
                     onChange={handleChange}
                   />
@@ -154,30 +149,26 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="country">
-                    Country
-                  </label>
+                 
                   <input
-                    className="form-control text-black appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="country"
                     name="country"
                     type="text"
-                    placeholder="USA"
+                    placeholder="Country"
                     value={formData.country}
                     onChange={handleChange}
                   />
                   {errors.country && <p className="text-red text-xs italic">{errors.country}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="email">
-                    E-mail
-                  </label>
+                  
                   <input
-                    className="form-control text-black appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="IronMan@email.com"
+                    placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
                   />
@@ -186,11 +177,9 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="company-name">
-                    Company Name
-                  </label>
+                 
                   <input
-                    className="form-control text-black appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="company-name"
                     name="companyName"
                     type="text"
@@ -203,11 +192,9 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="service-type">
-                    Service Type
-                  </label>
+                 
                   <select
-                    className="form-control appearance-none block w-full text-gray-600 bg-white border border-gray-300 text-gray rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 text-gray rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="service-type"
                     name="serviceType"
                     value={formData.serviceType}
@@ -223,14 +210,12 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                  <label className="block uppercase tracking-wide text-gradient3 text-xs font-bold mb-2" htmlFor="project-details">
-                    More Details About the Project
-                  </label>
+                 
                   <textarea
-                    className="form-control text-black no-resize appearance-none block w-full text-gray-600 bg-white border border-gray-300 rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white no-resize appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="project-details"
                     name="projectDetails"
-                    placeholder="Brief Summary, Timeline, Goals, & etc."
+                    placeholder="More Details About the Project"
                     value={formData.projectDetails}
                     onChange={handleChange}
                   ></textarea>
@@ -241,18 +226,22 @@ const ContactForm = () => {
                 <div className="w-full">
                   <button
                     type="submit"
-                    className="w-full px-4 py-3 text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-md hover:shadow-lg border-black font-semibold rounded-sm border bg-gradient-to-br focus:outline-none text-white flex justify-center items-center"
+                    className="w-full h-1/2 px-4 py-1 text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-md hover:shadow-lg font-semibold rounded-sm border  text-white flex justify-center items-center btn-gradient3"
                   >
                     Send
                     <CiPaperplane className="w-6 h-6 ml-2" />
                   </button>
                   {status && <p className={`text-base italic mt-2 ${status.includes('error') ? 'text-red' : 'text-gradient3'}`}>{status}</p>}
-                  {successMessage && <p className="text-green text-base italic mt-2">{successMessage}</p>}
+                  
                 </div>
               </div>
             </form>
           </div>
+          <div className="hidden sm:flex lg:w-1/3 w-full items-center justify-center lg:pl-10">
+            <img src={mail} alt="Mail Icon" className="w-full h-auto" />
+          </div>
         </div>
+        <FreqQuestions />
       </div>
     </div>
   );

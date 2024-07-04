@@ -10,6 +10,7 @@ import About from './views/About';
 import Contact from './views/Contact';
 import './index.css';
 import BackgroundWithHoverEffect from './components/Bg';
+import ScrollToTop from './components/ScrollToTop';
 
 const pageVariants = {
     initial: {
@@ -64,8 +65,10 @@ function App() {
                         <NavBar />
                     </div>
                     <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto md:w-4/5 sm: mt-32 md:mt-0">
+                    <ScrollToTop />
                         <AnimatePresence mode="wait">
                             <Routes location={location} key={location.pathname}>
+                                
                                 <Route path="/" element={
                                     <motion.div
                                         initial="initial"
