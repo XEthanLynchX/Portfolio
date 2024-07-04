@@ -150,3 +150,14 @@ body, html {
     background-color: #848dff26;
     border-radius: 10px;
 }
+
+.navbar {
+
+   /* Example z-index */
+  pointer-events: none; /* Prevents the navbar from blocking pointer events */
+}
+
+.navbar .navbar-content {
+  pointer-events: auto; /* Re-enable pointer events for the content inside the navbar */
+}
+

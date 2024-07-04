@@ -61,10 +61,10 @@ function App() {
             {loading ? <Preloader /> : (
                 <>
                     <BackgroundWithHoverEffect />
-                    <div className="w-full md:w-72 z-50 md:static fixed">
+                    <div className="w-full md:w-72 z-10 md:static fixed pointer-events-none ">
                         <NavBar />
                     </div>
-                    <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto md:w-4/5 sm: mt-32 md:mt-0">
+                    <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto md:w-4/5 sm: mt-32 md:mt-0  ">
                     <ScrollToTop />
                         <AnimatePresence mode="wait">
                             <Routes location={location} key={location.pathname}>

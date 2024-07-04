@@ -29,7 +29,7 @@ const NavBar = () => {
   const formattedTime = currentTime.toLocaleTimeString();
 
   return (
-    <div className="md:sticky sm:fixed top-0 h-screen font-cambria w-full">
+    <div className="md:sticky sm:fixed top-0 h-screen font-cambria w-full ">
       {/* Header Section */}
       <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
         <div className="flex items-center">
@@ -39,13 +39,13 @@ const NavBar = () => {
             <p className="text-sm text-gray-400">Full-Stack Developer</p>
           </div>
         </div>
-        <button onClick={toggleNavigation} className="text-white text-sm">
+        <button onClick={toggleNavigation} className="text-white text-sm pointer-events-auto">
           {openNavigation ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={`fixed top-24 left-0 w-full z-50 bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden`}>
+      <div className={` top-24 left-0 w-full bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden pointer-events-auto`}>
         <nav className="w-full text-base p-5">
           <div className="mt-4 ">
             <Link to="/" className="flex items-center mt-24 text-lg p-3 hover:bg-gray-700 mb-5" onClick={handleClick}>
