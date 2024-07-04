@@ -9,7 +9,7 @@ const TabIndicator = ({ count, currentIndex, handleClick }) => {
           {Array.from({ length: count }, (_, index) => (
               <span
                   key={index}
-                  className={`inline-block mx-1 w-6 h-6 -mt-24 md:-mt-16 ml-6 mr-6 md:mr-12 bg-blue rounded-full ${
+                  className={`inline-block mx-1 w-6 h-6 -mt-20 md:-mt-16 ml-6 mr-6 md:mr-12 bg-blue rounded-full ${
                       index === currentIndex ? 'opacity-100' : 'opacity-50'
                   }`}
                   onClick={() => handleClick(index)}
