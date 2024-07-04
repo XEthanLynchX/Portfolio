@@ -134,14 +134,14 @@ const Services = () => {
                 </div>
               </div>
 
-             <div className="flex flex-col md:flex-row items-center justify-around mt-8 md:mt-64 p-4 sm:p-10 font-cambria">
+             <div className="flex flex-col md:flex-row items-center justify-around mt-8 md:mt-32 p-4 sm:p-10 font-cambria">
               {/* Left Column with Image */}
               <div className="flex-1 flex justify-center items-center mt-36 md:mt-0 p-4">
                 <img src={select} alt="Selected Image" className="w-full h-auto md:max-w-md" />
               </div>
               
               {/* Right Column with Text */}
-              <div className="flex-1 flex flex-col justify-center items-start p-4">
+              <div className="flex-1 flex flex-col justify-center items-start p-4 ">
                 <p className="text-xs text-gray-400 mb-2">A Trusted Partner</p>
                 <h1 className="text-type md:text-3xl font-bold text-white mb-4">Why Choose Me</h1>
                 <p className="text-sm mt-4 md:mt-0 text-white mb-8">
@@ -151,7 +151,7 @@ const Services = () => {
                 {/* Statistics Row */}
                 <div className="flex flex-row gap-6 md: md:flex-row justify-between w-full mt-4">
                   <div className="flex flex-col items-center mb-4 md:mb-0 text-center">
-                    <p className=" text-base md:text-2xl font-bold text-white">2</p>
+                    <p className=" text-base md:text-2xl font-bold text-white">Many</p>
                     <p className="text-xs md:text-sm text-gray-400">Years Experience</p>
                   </div>
                   <div className="flex flex-col items-center mb-4 md:mb-0 text-center">
@@ -159,14 +159,14 @@ const Services = () => {
                     <p className="text-xs md:text-sm text-gray-400">Projects</p>
                   </div>
                   <div className="flex flex-col items-center text-center">
-                    <p className="text-base md:text-2xl font-bold text-white">5+</p>
+                    <p className="text-base md:text-2xl font-bold text-white">10+</p>
                     <p className="text-xs md:text-sm text-gray-400">Technologies Mastered</p>
                   </div>
                 </div>
               </div>
             </div>
 
-              <div className="pricing-container flex flex-col items-center justify-center min-h-screen p-4 sm:p-10 font-cambria mt-40 " ref={pricingContainerRef}>
+              <div className="pricing-container flex flex-col items-center justify-center min-h-screen p-4 sm:p-10 font-cambria mt-28 " ref={pricingContainerRef}>
                 <h3 className="text-base text-shade4 mb-4 font-bold">Pricing</h3>
                 <h2 className="text-3xl text-white mb-8 font-bold">Flexible Plans.</h2>
 

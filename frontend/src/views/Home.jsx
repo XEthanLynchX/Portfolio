@@ -18,8 +18,8 @@ const Home = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="bg-darkblue text-white p-4 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                            <h2 className="text-xl md:text-3xl font-semibold md:mb-2">2 <span className='text-sm md:text-base'>Years</span></h2>
-                            <p className="text-gray text-sm md:text-base">Experience</p>
+                            <h2 className="text-xl md:text-3xl font-semibold md:mb-2">10+</h2>
+                            <p className="text-gray text-sm md:text-base">Technologies Mastered</p>
                         </div>
                     </motion.div>
                     <motion.div
