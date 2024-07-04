@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaGithub,  FaLinkedin, FaInstagram, FaFileAlt, FaHome, FaProjectDiagram, FaUserAlt, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import { CgToolbox } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import pfp from '../media/pfp.jpg';
 
 const NavBar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const toggleNavigation = () => {
     setOpenNavigation(!openNavigation);
@@ -17,6 +18,15 @@ const NavBar = () => {
       setOpenNavigation(false);
     }
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedTime = currentTime.toLocaleTimeString();
 
   return (
     <div className="md:sticky sm:fixed top-0 h-screen font-cambria w-full">
@@ -80,6 +90,7 @@ const NavBar = () => {
         </nav>
       </div>
 
+     
       {/* Desktop Sidebar */}
       <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full">
         <div className="text-center mb-6">
@@ -105,6 +116,7 @@ const NavBar = () => {
             <FaFileAlt className="text-xl text-white hover:text-yellow" />
           </a>
         </div>
+        
         <nav className="w-full text-base">
           <div className="mt-4 mb-5">
             <Link to="/" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
@@ -132,6 +144,8 @@ const NavBar = () => {
             </Link>
           </div>
         </nav>
+        <p className="text-white font-bold text-xs">Local Time: {formattedTime}</p>
+        <p className="text-white font-bold text-xs">Kennesaw, Georgia</p>
       </div>
     </div>
   );

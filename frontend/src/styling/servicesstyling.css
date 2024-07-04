@@ -1,3 +1,66 @@
+.tech-banner-container {
+  overflow: hidden;
+  white-space: nowrap; 
+  padding: 20px 0;
+  
+}
+
+.tech-banner {
+  display: flex; /* Display as flex container */
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  justify-content: center; /* Center items horizontally */
+}
+
+.tech-banner span {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff; /* Dark text color */
+}
+.icon-text {
+  display: flex; /* Display as flex container */
+  align-items: center; /* Align items vertically */
+  margin: 10px; /* Adjust margin between groups */
+}
+
+.icon-text span:first-child {
+  margin-right: 8px; /* Adjust spacing between icon and text */
+}
+
+.icon-text span {
+  font-size: 18px; /* Adjust text size */
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.relativeDiv {
+  position: relative;
+  background-color: transparent;
+  
+  
+  background-image: linear-gradient(120deg, rgba(19, 33, 65,0.2), rgba(10, 10, 10, 0.2));
+  border-radius: 20px;
+
+}
+
+.fixedHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10; /* Ensure the header is below the services content when scrolling */
+}
+
+.servicesSection {
+  z-index: 20; /* Higher than the header to scroll over it */
+}
 
 
 
