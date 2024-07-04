@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import WorkDisplay from '../components/WorkDisplay';
 import work from '../media/work.gif';
 import '../styling/ProjectsStyling.css';
-import SwipeableViews from 'react-swipeable-views';
 import TabIndicator from '../components/Indicator';
 import pokemonthumbnail from '../media/pokemonthumbnail.png';
 import thumbnail from '../media/thumbnail.png';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import wwauto from '../media/wwauto.png';
 
 const projectsData = [
@@ -40,7 +38,6 @@ const projectsData = [
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const isDesktop = useMediaQuery('(min-width:1470px)');
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
@@ -48,10 +45,6 @@ const Projects = () => {
 
     const handleBack = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
-    };
-
-    const handleChangeIndex = (index) => {
-        setCurrentIndex(index);
     };
 
     return (
@@ -74,25 +67,17 @@ const Projects = () => {
                 </div>
             </div>
 
-            <div className='relative grid grid-col-1 overflow-x-hidden  '>
-                {isDesktop && (
-                    <div className='absolute top-1/3 transform -translate-y-1/2 left-32 z-10'>
-                        <ArrowBackIosIcon onClick={handleBack} style={{ cursor: 'pointer' }} />
-                    </div>
-                )}
-                <SwipeableViews index={currentIndex} onChangeIndex={handleChangeIndex} enableMouseEvents>
-                    {projectsData.map((project, index) => (
-                        <div key={index} className="swipeableView ">
-                            <WorkDisplay {...project} className="md:w-3/4 md:h-3/4 w-2/3 h-full" />
-                        </div>
-                    ))}
-                </SwipeableViews>
-                {isDesktop && (
-                    <div className='absolute top-1/3 transform -translate-y-1/2 right-24 w-1/12 z-10'>
-                        <ArrowForwardIosIcon onClick={handleNext} style={{ cursor: 'pointer' }} />
-                    </div>
-                )}
-                <TabIndicator count={projectsData.length} currentIndex={currentIndex} handleClick={handleChangeIndex} />
+            <div className='relative grid grid-col-1 overflow-x-hidden'>
+                <div className='absolute top-1/3 transform -translate-y-1/2 left-4 md:left-32 z-10'>
+                    <ArrowBackIosIcon onClick={handleBack} style={{ cursor: 'pointer' }} />
+                </div>
+                <div className="swipeableView flex justify-center items-center">
+                    <WorkDisplay {...projectsData[currentIndex]} className="md:w-3/4 mr-8 md:h-3/4 w-2/3 h-full" />
+                </div>
+                <div className='absolute top-1/3 transform -translate-y-1/2 -right-2 md:right-24 w-1/12 z-10'>
+                    <ArrowForwardIosIcon onClick={handleNext} style={{ cursor: 'pointer' }} />
+                </div>
+                <TabIndicator count={projectsData.length} currentIndex={currentIndex} handleClick={setCurrentIndex} />
             </div>
         </div>
     );
