@@ -49,8 +49,8 @@ const Home = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="bg-darkblue text-white  md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
-                           <h2 className="text-lg 2xl:text-xl font-semibold mb-1 md:mb-2">Certified Software Developer</h2> 
+                        <div className="bg-darkblue text-white p-6 md:p-8 rounded-lg shadow-md text-center hover:shadow-glow h-full">
+                           <h2 className="text-md 2xl:text-xl font-semibold  md:mb-2 ">Certified Software Developer</h2> 
                         </div>
                     </motion.div>
                 </div>
@@ -85,7 +85,7 @@ const Home = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow mt-24 md:mt-0">
-                        <h2 className="text-xl md:text-3xl font-semibold mb-2 md:mb-4">Featured Projects</h2>
+                        <h2 className="text-xl md:text-3xl font-semibold mb-2 md:mb-4 text-center">Featured Projects</h2>
                         <div className="flex justify-center items-center text-sm md:text-base font-semibold text-blue mb-4 md:mb-8">
                             <Link to="/projects" className="flex justify-center items-center text-blue-500">
                                 View all
@@ -105,7 +105,7 @@ const Home = () => {
                 >
                     <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow h-full mt-24 md:mt-0">
                         <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Full-Stack Development</h2>
-                        <p className="text-gray text-sm md:text-base mb-4 md:mb-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
+                        <p className="text-gray text-sm  mb-4 md:mb-8 md:text-base lg:text-type">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
                         <div className="flex space-x-4 md:space-x-6 justify-center">
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
                                 <FaPython size={40} md:size={60} color="#3776AB" />

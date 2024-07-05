@@ -48,7 +48,7 @@ const NavBar = () => {
       <div className={` top-24 left-0 w-full bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden pointer-events-auto`}>
         <nav className="w-full text-base p-5">
           <div className="mt-4 ">
-            <Link to="/" className="flex items-center mt-24 text-lg p-3 hover:bg-gray-700 mb-5" onClick={handleClick}>
+            <Link to="/" className="flex items-center -mt-6 text-lg p-3 hover:bg-gray-700 mb-5" onClick={handleClick}>
               <button className="btn btn-outline w-full"><FaHome className="mr-3" /> Home</button>
             </Link>
           </div>

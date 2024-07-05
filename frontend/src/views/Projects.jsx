@@ -14,25 +14,29 @@ const projectsData = [
         image: work,
         name: 'Ethan Lynch Coaching',
         technologies: ['React', 'Django', 'Tailwind'],
-        link: "https://ethan-lynch-coaching.web.app/"
+        link: "https://ethan-lynch-coaching.web.app/",
+        repo: 'https://github.com/XEthanLynchX/ethan-lynch'
     },
     {
         image: pokemonthumbnail,
         name: 'Pokemon Handheld',
         technologies: ['React', 'Flask', 'MySQL'],
-        link: "https://www.youtube.com/watch?v=YjYFz6mf0vU&t=3s"
+        link: "https://www.youtube.com/watch?v=YjYFz6mf0vU&t=3s",
+        repo: 'https://github.com/Skylarsj/Dojo-Group'
     },
     {
         image: thumbnail,
         name: 'MoveMetrics',
         technologies: ['React', 'Javascript', 'MongoDB'],
-        link: "https://www.youtube.com/watch?v=Bx8snIJxfA0"
+        link: "https://www.youtube.com/watch?v=Bx8snIJxfA0",
+        repo: 'https://github.com/XEthanLynchX/MoveMetrics'
     },
     {
         image: wwauto,
         name: 'W&W Auto Detailing',
         technologies: ['SquareSpace', 'Figma', 'Adobe'],
-        link: "https://www.autodetailingww.com/"
+        link: "https://www.autodetailingww.com/",
+        repo: 'https://www.autodetailingww.com/'
     }
 ];
 

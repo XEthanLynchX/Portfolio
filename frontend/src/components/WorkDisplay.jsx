@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-const WorkDisplay = ({ image, name, technologies, link }) => {
+const WorkDisplay = ({ image, name, technologies, link, repo }) => {
     return (
         <div className="text-white p-8 rounded-lg shadow-md hover:shadow-glow mb-24 w-screen md:w-full font-cambria bg-darkblue">
             <img src={image} alt={name} className="w-screen rounded-lg mb-4" />
@@ -16,14 +16,14 @@ const WorkDisplay = ({ image, name, technologies, link }) => {
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <span className="bg-gradient3 font-bold text-black px-3 py-1 text-xs rounded-full">{tech}</span>
+                            <span className="bg-gradient3 md:text-sm font-bold text-black px-3 py-1 text-xxs rounded-full">{tech}</span>
                         </motion.div>
                     ))}
                 </div>
                 <div className="flex space-x-2"> {/* Container with Flexbox */}
                     <a 
                         href={link} 
-                        className="bg-gradient3 font-bold text-black px-3 py-1 text-xs rounded-full ml-4"
+                        className="bg-gradient3  font-bold text-black px-3 py-1 text-xxs rounded-full ml-4 md:text-sm"
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
@@ -31,8 +31,8 @@ const WorkDisplay = ({ image, name, technologies, link }) => {
                         <span className="hidden md:block">View Project</span>
                     </a>
                     <a 
-                        href={link} /* Update this href to the repo link if different */
-                        className="bg-gradient3 font-bold text-black px-3 py-1 rounded-full hidden md:block "
+                        href={repo} /* Update this href to the repo link if different */
+                        className="bg-gradient3 font-bold text-black px-3 py-1 rounded-full hidden md:block  "
                         target="_blank" 
                         rel="noopener noreferrer"
                     >

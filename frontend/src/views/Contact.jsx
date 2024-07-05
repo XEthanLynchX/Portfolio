@@ -201,9 +201,10 @@ const ContactForm = () => {
                     onChange={handleChange}
                   >
                     <option value="">Select a service</option>
-                    <option value="frontend">Frontend Services</option>
-                    <option value="backend">Backend Services</option>
-                    <option value="fullstack">Full Stack Services</option>
+                    <option value="Basic">Basic Package</option>
+                    <option value="Standard">Standard Package</option>
+                    <option value="Premium">Premium Package</option>
+                    <option value="Custom">Custom Package</option>
                   </select>
                   {errors.serviceType && <p className="text-red text-xs italic">{errors.serviceType}</p>}
                 </div>
