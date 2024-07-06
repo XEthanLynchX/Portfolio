@@ -238,7 +238,7 @@ const ContactForm = () => {
               </div>
             </form>
           </div>
-          <div className="hidden sm:flex lg:w-1/3 w-full items-center justify-center lg:pl-10">
+          <div className="hidden md:flex lg:w-1/3 w-full items-center justify-center lg:pl-10">
             <img src={mail} alt="Mail Icon" className="w-full h-auto" />
           </div>
         </div>

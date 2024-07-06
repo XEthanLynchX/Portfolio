@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WorkDisplay from '../components/WorkDisplay';
 import work from '../media/work.gif';
 import '../styling/ProjectsStyling.css';
+import '../styling/fade.css'
 import TabIndicator from '../components/Indicator';
 import pokemonthumbnail from '../media/pokemonthumbnail.png';
 import thumbnail from '../media/thumbnail.png';
@@ -42,6 +43,7 @@ const projectsData = [
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const sectionsRef = useRef([]);
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
@@ -51,27 +53,52 @@ const Projects = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
     };
 
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+    
+        sectionsRef.current.forEach(section => {
+          if (section) observer.observe(section);
+        });
+    
+        return () => {
+          sectionsRef.current
+            .filter(section => section !== null)
+            .forEach(section => observer.unobserve(section));
+        };
+      }, []);
+
     return (
-        <div className="p-4 md:p-10 w-full mt-12 leading font-cambria overflow-x-hidden">
-            <h1 className='text-3xl md:text-4xl text-white mb-6 md:mb-12 font-bold text-center'>
-                SELECTED WORKS <span className='text-black'>| </span>
-                <span className='text-3xl md:text-4xl text-white mb-6 md:mb-12 font-bold '>
+        <div className="p-4 md:p-10 w-full mt-12 leading font-cambria overflow-hidden" >
+            <h1 className='text-2xl md:text-2xl lg:text-2xl xl:text-4xl text-white mb-6 md:mb-12 font-bold text-center fade-in' ref={el => sectionsRef.current.push(el)}>
+                SELECTED WORKS <span className='text-black hidden 2xl:inline'>| </span>
+                <span className='hidden 2xl:inline text-3xl md:text-4xl text-white mb-6 md:mb-12 font-bold'>
                     {currentIndex + 1}
                 </span>
             </h1>
 
-            <div className='grid md:grid-cols-3 mb-6 md:mb-12'>
-                <div className='col-span-'></div>
+            
+             
 
-                <div className='col-span-3 ml-0 md:ml-64 inline-block text-base md:text-xl text-gray'>
+                <div className='p-4 md:p-10  md:ml-24 xl:ml-16 2xl:ml-32 inline-block text-base md:text-xl text-gray fade-in' ref={el => sectionsRef.current.push(el)}>
                     <p>(Projects)</p>
-                    <p className='text-sm md:text-base w-full md:w-2/3'>
+                    <p className='text-sm md:text-base w-full xl:w-2/3'>
                         Featured projects that have been meticulously crafted with passion and purpose over the years.
                     </p>
                 </div>
-            </div>
+           
 
-            <div className='relative grid grid-col-1 overflow-x-hidden'>
+            <div className='relative grid grid-col-1 overflow-x-hidden p-2 fade-in' ref={el => sectionsRef.current.push(el)}>
                 <div className='absolute top-1/3 transform -translate-y-1/2 left-4 md:left-32 z-10'>
                     <ArrowBackIosIcon onClick={handleBack} style={{ cursor: 'pointer' }} />
                 </div>

@@ -31,7 +31,7 @@ const TypingAnimation = () => {
   }, [text, typingSpeed, loopNum, words]);
 
   return (
-    <h2 className=" text-xl font-semibold text-white font-cambria text-center ">
+    <h2 className=" sm:text-type md:text-type xl:text-xl 2xl:text-2xl font-semibold text-white font-cambria text-center ">
       {text}
       <span className="blinking-cursor">|</span>
     </h2>

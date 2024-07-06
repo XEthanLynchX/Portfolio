@@ -57,7 +57,7 @@ function App() {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row min-h-screen">
+        <div className="flex flex-col md:flex-row min-h-screen font-sans">
             {loading ? <Preloader /> : (
                 <>
                     <BackgroundWithHoverEffect />

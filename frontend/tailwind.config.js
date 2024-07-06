@@ -32,7 +32,11 @@ export default {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-      cambria: ['Cambria', 'serif'],
+      sans: ['Open Sans', 'sans-serif'],
+      robotoSlab: ['Roboto Slab', 'serif'],
+      sans: ['Open Sans', 'sans-serif'],
+      roboto: ['Roboto', 'sans-serif'],
+
     },
     
 
@@ -59,20 +63,19 @@ export default {
     },
     screens: {
       'sm': '640px',
-      // => @media (min-width: 640px) { ... }
 
       'md': '1025px',
-      // => @media (min-width: 768px) { ... }
-      
 
       'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
+    
 
       'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
+    
 
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+     
+
+      '3xl': '1700px'
     }
     ,
     
