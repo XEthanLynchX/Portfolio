@@ -11,6 +11,8 @@ import Contact from './views/Contact';
 import './index.css';
 import BackgroundWithHoverEffect from './components/Bg';
 import ScrollToTop from './components/ScrollToTop';
+import Projects2 from './views/Projects2'
+
 
 const pageVariants = {
     initial: {
@@ -88,7 +90,7 @@ function App() {
                                         variants={pageVariants}
                                         transition={pageTransition}
                                     >
-                                        <Projects />
+                                        <Projects2 />
                                     </motion.div>
                                 } />
                                 <Route path="/services" element={

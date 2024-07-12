@@ -45,6 +45,7 @@ export default {
     },
 
     fontSize: {
+      'xssm': '8px',
       'xxs': '12px', // '0.75rem
       'xs': '16px',    
       'sm': '20px',    
@@ -63,6 +64,8 @@ export default {
     },
     screens: {
       'sm': '640px',
+
+      'mmd': '641px',
 
       'md': '1025px',
 

@@ -7,7 +7,7 @@ import work from '../media/work.gif';
 import { Link } from 'react-router-dom';
 const Home = () => {
     return (
-        <div className="p-4 mb-64 md:mb-0 md:p-10 min-h-screen w-full font-cambria">
+        <div className="p-4 mb-64 md:mb-0 md:p-10 min-h-screen w-full ">
             <h1 className='text-type md:text-3xl text-white mb-8 md:mb-12 font-bold'>Professional Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 <div className="grid grid-cols-2 md:grid-cols-2 gap-8 smd:gap-8">
@@ -63,7 +63,7 @@ const Home = () => {
                     <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow flex flex-col space-y-4 md:space-y-8 h-full mt-8 md:mt-0">
                         <div>
                             <h2 className="text-lg md:text-xl font-semibold text-white inline-flex mt-4 md:mt-16">
-                                <FlipWords words={['Ultimate Software Developer ', 'Innovative Problem Solver ', 'Creative Tech Visionary ']} duration={3500} />
+                                <FlipWords words={['Software Developer ', 'Innovative Problem Solver ', 'Creative Tech Visionary ']} duration={3500} />                   
                                 <span> </span>
                             </h2>
                         </div>

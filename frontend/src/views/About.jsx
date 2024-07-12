@@ -31,7 +31,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 sm:p-10 font-cambria" style={{ textShadow: '8px 6px 4px rgba(0,0,0,0.5)' }}>
+    <div className="flex flex-col items-center min-h-screen p-4 sm:p-10 " style={{ textShadow: '8px 6px 4px rgba(0,0,0,0.5)' }}>
       <p className="text-gray fade-in" ref={el => sectionsRef.current.push(el)}>Nice to meet you!</p>
       <TypingAnimation />
       

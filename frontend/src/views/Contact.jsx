@@ -123,7 +123,7 @@ const ContactForm = () => {
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <input
-                    className="form-control appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 text-white py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 text-white py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="first-name"
                     name="firstName"
                     type="text"
@@ -136,7 +136,7 @@ const ContactForm = () => {
                 <div className="w-full md:w-1/2 px-3">
                   
                   <input
-                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="last-name"
                     name="lastName"
                     type="text"
@@ -151,7 +151,7 @@ const ContactForm = () => {
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                  
                   <input
-                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="country"
                     name="country"
                     type="text"
@@ -164,7 +164,7 @@ const ContactForm = () => {
                 <div className="w-full md:w-1/2 px-3">
                   
                   <input
-                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="email"
                     name="email"
                     type="email"
@@ -179,7 +179,7 @@ const ContactForm = () => {
                 <div className="w-full px-3">
                  
                   <input
-                    className="form-control text-white appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="company-name"
                     name="companyName"
                     type="text"
@@ -194,7 +194,7 @@ const ContactForm = () => {
                 <div className="w-full px-3">
                  
                   <select
-                    className="form-control appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 text-gray rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 text-gray rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="service-type"
                     name="serviceType"
                     value={formData.serviceType}
@@ -213,7 +213,7 @@ const ContactForm = () => {
                 <div className="w-full px-3">
                  
                   <textarea
-                    className="form-control text-white no-resize appearance-none block w-full text-gray-600 bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white no-resize appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="project-details"
                     name="projectDetails"
                     placeholder="More Details About the Project"

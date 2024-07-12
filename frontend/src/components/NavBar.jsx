@@ -29,17 +29,17 @@ const NavBar = () => {
   const formattedTime = currentTime.toLocaleTimeString();
 
   return (
-    <div className="md:sticky sm:fixed top-0 h-screen font-cambria w-full ">
+    <div className="md:sticky sm:fixed top-0 h-screen w-full ">
       {/* Header Section */}
       <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
         <div className="flex items-center">
           <img src={pfp} alt="Profile" className="w-1/4 rounded-full mr-3" />
           <div>
             <h2 className="text-lg font-bold text-white">Ethan Lynch</h2>
-            <p className="text-sm text-gray-400">Full-Stack Developer</p>
+            <p className="text-sm ">Full-Stack Developer</p>
           </div>
         </div>
-        <button onClick={toggleNavigation} className="text-white text-sm pointer-events-auto ">
+        <button onClick={toggleNavigation} className="text-white -mr-2 text-sm pointer-events-auto ">
           {openNavigation ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -48,7 +48,7 @@ const NavBar = () => {
       <div className={` top-24 left-0 w-full bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden pointer-events-auto`}>
         <nav className="w-full text-base p-5">
           <div className="mt-4 ">
-            <Link to="/" className="flex items-center -mt-6 text-lg p-3 hover:bg-gray-700 mb-5" onClick={handleClick}>
+            <Link to="/" className="flex items-center -mt-6 text-lg p-3 hover:bg-Fgh-700 mb-5" onClick={handleClick}>
               <button className="btn btn-outline w-full"><FaHome className="mr-3" /> Home</button>
             </Link>
           </div>
@@ -100,7 +100,7 @@ const NavBar = () => {
             </div>
           </div>
           <h2 className="text-lg font-bold text-white">Ethan Lynch</h2>
-          <p className="text-sm text-gray-400">Full-Stack Developer</p>
+          <p className="text-sm ">Full-Stack Developer</p>
         </div>
         <div className="icon-container flex space-x-4 mb-5">
           <a href="https://github.com/XEthanLynchX" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">

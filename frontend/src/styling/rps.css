@@ -1,0 +1,255 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 2rem 8rem;
+}
+
+.header-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.header-container .header-line {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #223664, #6082B6); /* Gradient from #132141 to #6082B6 */
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
+  padding: 8rem;
+  position: relative; /* Ensures that absolute positioning works within this container */
+}
+
+.project-container.reversed {
+  flex-direction: row-reverse;
+  margin-top: -8%;
+  margin-bottom: -8%;
+  text-align: right;
+}
+
+.project-info {
+  flex: 1;
+  padding: 1rem;
+}
+
+.project-info small {
+  display: block;
+  font-size: 1rem;
+  color: #3a64c5;
+}
+
+.project-info h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 3.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.project-info .project-description {
+  background-color: #132141;
+  color: #fff;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  margin-top: -2rem; /* Adjust this value to overlap the image */
+  margin-right: -10%; /* Adjust this value as needed to overlap the image */
+}
+
+.project-container.reversed .project-info .project-description {
+  margin-left: -10%; 
+  margin-right: auto;
+}
+
+.project-info .project-technologies {
+  margin-top: 2rem;
+  color: #8492a6;
+  display: flex;
+  gap: 2rem; 
+  justify-content: start;
+}
+
+.project-info .project-technologies.reversed {
+  justify-content: flex-end;
+}
+
+.project-info .project-links a {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  
+}
+
+
+.project-info .project-links a:hover {
+  color: #001f3f;
+}
+
+.project-image {
+  flex: 1;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 1600px) {
+  .project-container {
+    padding: 4rem;
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1268px) {
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    padding: .3rem 5rem;
+  }
+  
+  .header-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .header-container .header-line {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #223664, #6082B6); /* Gradient from #132141 to #6082B6 */
+  }
+  
+  .project-container {
+    flex-direction: column-reverse;
+    padding: 4rem;
+  }
+
+  .project-container.reversed {
+    flex-direction: column-reverse;
+    padding: 4rem;
+  }
+
+  .project-info .project-technologies.reversed {
+    justify-content: flex-start;
+  }
+
+  .project-info h3,
+  .project-info small {
+    text-align: left;
+  }
+
+  .project-container.reversed .project-info .project-description {
+    margin-left: 0%;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .project-info .project-technologies.reversed {
+    justify-content: left;
+  }
+
+  
+  .project-info h3 {
+    margin-bottom: 1rem;
+  }
+
+  .project-info .project-description {
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .project-info .project-technologies {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .project-info .project-links {
+    text-align: right;
+  }
+
+  
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    padding: 0rem 4rem;
+  }
+
+  .header-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: linear-gradient(#223664, #6082B6);
+  }
+
+  .project-container {
+    padding: 1.5rem;
+  }
+
+  .project-container.project-container.reversed {
+    padding: 1.5rem;
+  }
+
+  .project-container.reversed,
+  .project-container.second-project {
+    flex-direction: column-reverse;
+    padding: 4rem;
+  }
+
+  
+  .project-info h3 {
+    text-align: left;
+    font-size: 1.7rem;
+  }
+
+  .project-container.reversed .project-info .project-description,
+  .project-container.second-project .project-info .project-description {
+    margin-left: 0%;
+    margin-right: auto;
+  }
+
+  .project-info .project-technologies.reversed,
+  .project-info .project-technologies.second-project {
+    justify-content: center;
+   
+  }
+
+  
+
+  .project-info h3 {
+    margin-bottom: 1rem;
+  }
+
+  .project-info .project-description {
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+  }
+
+  .project-info .project-technologies {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .project-info .project-links {
+    justify-content: center;
+  }
+}

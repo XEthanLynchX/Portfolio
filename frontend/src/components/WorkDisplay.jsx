@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-const WorkDisplay = ({ image, name, technologies, link, repo }) => {
+const WorkDisplay = ({ image, name, technologies, link, repo, onNext, onBack }) => {
     return (
-        <div className="text-white p-8 rounded-lg shadow-md hover:shadow-glow mb-24 w-screen md:w-full font-cambria bg-darkblue" >
-            <img src={image} alt={name} className="w-screen rounded-lg mb-4" />
-            <h2 className="md:text-2xl font-semibold mb-2">{name}</h2>
+        <div className="relative ml-6 text-white p-8 rounded-lg shadow-md hover:shadow-glow mb-24 sm:w-screen mmd:w-full  bg-darkblue">
+            <ArrowBackIosIcon className="absolute left-2 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={onBack} />
+            <img src={image} alt={name} className="w-full rounded-lg mb-4" />
+            <h2 className="md:text-xxl font-semibold mb-2">{name}</h2>
             <div className="flex justify-between items-center">
-                <div className="flex space-x-2 ">
+                <div className="flex space-x-2">
                     {technologies.map((tech, index) => (
                         <motion.div
                             key={index}
@@ -16,31 +19,34 @@ const WorkDisplay = ({ image, name, technologies, link, repo }) => {
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <span className="bg-gradient3 md:text-sm font-bold text-black px-3 py-1 text-xxs rounded-full">{tech}</span>
+                            <span className="bg-gradient3 md:text-xs font-bold text-black px-3 py-1 text-xssm rounded-full">{tech}</span>
                         </motion.div>
                     ))}
                 </div>
-                <div className="flex space-x-2"> {/* Container with Flexbox */}
-                    <a 
-                        href={link} 
-                        className="bg-gradient3 font-bold text-black px-3 py-1 text-xxs rounded-full ml-4 md:text-sm"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                <div className="flex space-x-2">
+                    <motion.button
+                        initial={{ opacity: 0, scale: 1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-gradient3 md:text-xs font-bold ml-8 text-black px-3 py-1 text-xssm rounded-full"
+                        onClick={() => window.open(link, "_blank")}
                     >
-                        <span className="block md:hidden">Project</span>
-                        <span className="hidden md:block">View Project</span>
-                    </a>
-                    <a 
-                        href={repo} /* Update this href to the repo link if different */
-                        className="bg-gradient3 md:text-sm font-bold text-black px-3 py-1 text-xxs rounded-full hidden md:block  "
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        Project
+                    </motion.button>
+                    <motion.button
+                        initial={{ opacity: 0, scale: 1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-gradient3 md:text-xs font-bold hidden md:block text-black px-3 py-1 text-xxs rounded-full"
+                        onClick={() => window.open(repo, "_blank")}
                     >
-                        
-                        <span className="hidden md:block">View Repo</span>
-                    </a>
+                        View Repo
+                    </motion.button>
                 </div>
             </div>
+            <ArrowForwardIosIcon className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={onNext} />
         </div>
     );
 };

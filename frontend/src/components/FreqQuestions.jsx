@@ -22,12 +22,12 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="lg:py-24 mt-72 font-cambria" id="faq">
+    <div className="lg:py-24 mt-72" id="faq">
       <div className="px-8 md:ml-36 md:w-2/3  lg:px-16">
       <p className="text-base font-bold uppercase sm:mx-6 text-center text-normal  mt-4 text-shade4 ">
           FAQS
         </p>
-        <h3 className="mt-1 text-xl font-bold text-gray-800 sm:mx-6  md:text-2xl text-center">
+        <h3 className="mt-1 text-xl font-bold sm:mx-6  md:text-2xl text-center">
           You Got Questions ?
         </h3>
         
