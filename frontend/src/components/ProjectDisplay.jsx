@@ -35,9 +35,9 @@ const ProjectDisplay = ({ project, isReversed, isSecond }) => {
         isReversed && !isSecond ? 'reversed' : ''
       } ${isSecond ? 'second-project' : ''}`}
     >
-      <div className="project-info dafe-in" ref={el => sectionsRef.current.push(el)}>
+      <div className="project-info dafe-in " ref={el => sectionsRef.current.push(el)}>
         <small className='fade-in' ref={el => sectionsRef.current.push(el)}>Featured Project</small>
-        <h3 className='fade-in'ref={el => sectionsRef.current.push(el)}>{project.title}</h3>
+        <h3 className='fade-in text-white'ref={el => sectionsRef.current.push(el)}>{project.title}</h3>
         <div ref={el => sectionsRef.current.push(el)} className="project-description fade-in hover:shadow-2xl shadow-md">
           {project.description}
         </div>

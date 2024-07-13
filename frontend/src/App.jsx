@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Preloader from './components/Loading';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
-import Projects from './views/Projects';
 import Services from './views/Services';
 import About from './views/About';
 import Contact from './views/Contact';

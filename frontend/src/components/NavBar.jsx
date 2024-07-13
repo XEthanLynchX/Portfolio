@@ -29,7 +29,7 @@ const NavBar = () => {
   const formattedTime = currentTime.toLocaleTimeString();
 
   return (
-    <div className="md:sticky sm:fixed top-0 h-screen w-full ">
+    <div className="md:sticky sm:fixed top-0 h-screen w-full text-white">
       {/* Header Section */}
       <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
         <div className="flex items-center">
@@ -39,37 +39,37 @@ const NavBar = () => {
             <p className="text-sm ">Full-Stack Developer</p>
           </div>
         </div>
-        <button onClick={toggleNavigation} className="text-white -mr-2 text-sm pointer-events-auto ">
+        <button onClick={toggleNavigation} className="text-white mr-2 text-sm pointer-events-auto ">
           {openNavigation ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* Mobile Navigation Menu */}
       <div className={` top-24 left-0 w-full bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden pointer-events-auto`}>
-        <nav className="w-full text-base p-5">
-          <div className="mt-4 ">
+        <nav className="w-full text-base p-5 text-white">
+          <div className="mt-4 text-white">
             <Link to="/" className="flex items-center -mt-6 text-lg p-3 hover:bg-Fgh-700 mb-5" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaHome className="mr-3" /> Home</button>
+              <button className="btn btn-outline w-full text-white"><FaHome className="mr-3" /> Home</button>
             </Link>
           </div>
-          <div className="mb-5">
+          <div className="mb-5 text-white">
             <Link to="/projects" className="flex items-center text-lg p-3 bg-gradient-to-br from-gradient1to-blue-500 hover:bg-gradient-to-bl" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
+              <button className="btn btn-outline w-full text-white"><FaProjectDiagram className="mr-3" /> Projects</button>
             </Link>
           </div>
-          <div className="mb-5">
-            <Link to="/services" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><CgToolbox className="mr-3" /> Services</button>
+          <div className="mb-5 text-white">
+            <Link to="/services" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white"><CgToolbox className="mr-3" /> Services</button>
             </Link>
           </div>
-          <div className="mb-5">
-            <Link to="/about" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaUserAlt className="mr-3" /> About</button>
+          <div className="mb-5 text-white">
+            <Link to="/about" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white"><FaUserAlt className="mr-3" /> About</button>
             </Link>
           </div>
-          <div className="mb-5">
-            <Link to="/contact" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaEnvelope className="mr-3" /> Contact</button>
+          <div className="mb-5 text-white">
+            <Link to="/contact" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white"><FaEnvelope className="mr-3" /> Contact</button>
             </Link>
           </div>
           {/* Social Media Links in Mobile Navigation */}
@@ -117,30 +117,30 @@ const NavBar = () => {
           </a>
         </div>
         
-        <nav className="w-full text-base">
+        <nav className="w-full text-base text-white">
           <div className="mt-4 mb-5">
-            <Link to="/" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaHome className="mr-3" /> Home</button>
+            <Link to="/" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaHome className="mr-3" /> Home</button>
             </Link>
           </div>
           <div className="mb-5">
-            <Link to="/projects" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaProjectDiagram className="mr-3" /> Projects</button>
+            <Link to="/projects" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaProjectDiagram className="mr-3" /> Projects</button>
             </Link>
           </div>
           <div className="mb-5">
-            <Link to="/services" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><CgToolbox className="mr-3" /> Services</button>
+            <Link to="/services" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><CgToolbox className="mr-3" /> Services</button>
             </Link>
           </div>
           <div className="mb-5">
-            <Link to="/about" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaUserAlt className="mr-3" /> About</button>
+            <Link to="/about" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaUserAlt className="mr-3" /> About</button>
             </Link>
           </div>
           <div className="mb-5">
-            <Link to="/contact" className="flex items-center text-lg p-3 hover:bg-gray-700" onClick={handleClick}>
-              <button className="btn btn-outline w-full"><FaEnvelope className="mr-3" /> Contact</button>
+            <Link to="/contact" className="flex items-center text-lg p-3 " onClick={handleClick}>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaEnvelope className="mr-3" /> Contact</button>
             </Link>
           </div>
         </nav>

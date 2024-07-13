@@ -56,10 +56,10 @@ const Services = () => {
             <div className="text-container text-left flex-1 font-bold" style={{ textShadow: '8px 8px 4px rgba(0,0,0,0.5)' }}>
               <p className='text-gray text-sm mb-2 md:mb-0'> A Developer For You</p>
               <h1 className="text-white text-xl md:text-3xl mb-12 font-bold w-3/4">Elevate Your Online Presence</h1>
-              <p className="text-sm md:text-base mb-6 md:mb-2">Increase Your Brand Awareness.</p>
-              <p className="text-sm md:text-base mb-6 md:mb-2">Quick Turn Around Time.</p>
-              <p className="text-sm md:text-base mb-6 md:mb-2">Professional and Reliable.</p>
-              <p className="text-sm md:text-base mb-6 md:mb-2">Easy Design Process.</p>
+              <p className="text-sm md:text-base mb-6 md:mb-2 text-white">Increase Your Brand Awareness.</p>
+              <p className="text-sm md:text-base mb-6 md:mb-2 text-white">Quick Turn Around Time.</p>
+              <p className="text-sm md:text-base mb-6 md:mb-2 text-white">Professional and Reliable.</p>
+              <p className="text-sm md:text-base mb-6 md:mb-2 text-white">Easy Design Process.</p>
               <p className="text-sm text-shade4 mb-6 md:mb-2">A couple clicks away.</p>
               <div className='flex mt-12 justify-center md:justify-start'>
                 <button onClick={scrollToPricing} type="button" className="text-white bg-gradient-to-br from-shade4 to-gradient1 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-10 md:px-5 py-0 md:py-2.5 text-center me-2 mb-2">View Plans</button>
@@ -88,7 +88,7 @@ const Services = () => {
             <div className="absolute inset-0 z-0 rounded-lg"></div>
             <div className="relative z-10 flex flex-col justify-center items-center rounded-2xl p-4">
               {/* Header moved here, outside and above the cards container */}
-              <h2 className=" text-type md:text-xl text-center mb-8 font-bold">Your Trusted Partner in Web Development</h2>
+              <h2 className=" text-type md:text-xl text-center mb-8 font-bold text-white">Your Trusted Partner in Web Development</h2>
               <h3 className=" text-gray text-sm text-center mb-8 font-bold -mt-6">Our Features & Sevices</h3>
 
               {/* Cards container */}

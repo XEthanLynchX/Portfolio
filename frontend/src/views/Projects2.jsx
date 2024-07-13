@@ -33,7 +33,7 @@ const Projects2 = () => {
   return (
     <div  >
       <div className="header-container  " >
-        <h2 className='fade-in' ref={el => sectionsRef.current.push(el)}>What I've Been Working On</h2>
+        <h2 className='fade-in text-white' ref={el => sectionsRef.current.push(el)}>What I've Been Working On</h2>
         <div className="header-line"></div>
       </div>
       {ProjectData.map((project, index) => (

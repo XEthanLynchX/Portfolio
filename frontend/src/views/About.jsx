@@ -35,13 +35,13 @@ const About = () => {
       <p className="text-gray fade-in" ref={el => sectionsRef.current.push(el)}>Nice to meet you!</p>
       <TypingAnimation />
       
-      <h3 className="text-base sm:w-1/2 lg:w-1/3 text-center mt-8 fade-in" ref={el => sectionsRef.current.push(el)}>I work as a Full-Stack Developer, creating memorable web experiences through robust code and techniques.</h3>
+      <h3 className="text-base sm:w-1/2 lg:w-1/3 text-center mt-8 fade-in text-white" ref={el => sectionsRef.current.push(el)}>I work as a Full-Stack Developer, creating memorable web experiences through robust code and techniques.</h3>
       <img src={laptop} alt="Laptop" className="w-full sm:w-2/3 lg:w-1/2 mt-8 sm:mt-24 border-8 rounded border-black hover:shadow-glow fade-in" ref={el => sectionsRef.current.push(el)} />
 
       <div className="text-left w-full sm:w-2/3 lg:w-1/2 mt-8 sm:mt-16">
         <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
           <h3 className="text-gray text-sm">Summary</h3>
-          <h2 className="text-type font-bold mb-4 sm:mb-8">Studying Computer Science & freelancing in tech</h2>
+          <h2 className="text-type font-bold mb-4 sm:mb-8 text-white">Studying Computer Science & freelancing in tech</h2>
         </div>
 
         <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
@@ -54,7 +54,7 @@ const About = () => {
 
         <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
           <h3 className="text-gray text-sm">Background Story</h3>
-          <h2 className="text-xl font-bold mb-4 sm:mb-8">My Constant Cycle of Learning</h2>
+          <h2 className="text-xl font-bold mb-4 sm:mb-8 text-white">My Constant Cycle of Learning</h2>
         </div>
         
         <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
@@ -67,7 +67,7 @@ const About = () => {
 
         <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
           <h3 className="text-gray text-bold text-sm">Why Full-Stack?</h3>
-          <h2 className="font-bold text-xl mb-4 sm:mb-8">Making Things Simple and Easy</h2>
+          <h2 className="font-bold text-xl mb-4 sm:mb-8 text-white">Making Things Simple and Easy</h2>
           <p className="text-white text-base mb-6">As technology progresses, things are only getting more complex. As a Full-Stack Developer, I have the opportunity to make these complex processes simple and user-friendly.</p>
           <p className="text-white text-base mb-6">Full-Stack development allows us to create unique websites and applications, differentiating ourselves from others by showing care through our attention to design.</p>
           <p className="text-white text-base mb-6">Everyone values good design, whether consciously or unconsciously. It could be the difference between staying on your website or leaving.</p>
