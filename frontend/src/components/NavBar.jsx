@@ -117,30 +117,30 @@ const NavBar = () => {
           </a>
         </div>
         
-        <nav className="w-full text-base text-white">
+        <nav className="w-full text-base text-white h-screen">
           <div className="mt-4 mb-5">
             <Link to="/" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaHome className="mr-3" /> Home</button>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white"><FaHome className="mr-3" /> Home</button>
             </Link>
           </div>
           <div className="mb-5">
             <Link to="/projects" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaProjectDiagram className="mr-3" /> Projects</button>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white "><FaProjectDiagram className="mr-3" /> Projects</button>
             </Link>
           </div>
           <div className="mb-5">
             <Link to="/services" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><CgToolbox className="mr-3" /> Services</button>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white"><CgToolbox className="mr-3" /> Services</button>
             </Link>
           </div>
           <div className="mb-5">
             <Link to="/about" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaUserAlt className="mr-3" /> About</button>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white"><FaUserAlt className="mr-3" /> About</button>
             </Link>
           </div>
           <div className="mb-5">
             <Link to="/contact" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white hover:bg-gradient2"><FaEnvelope className="mr-3" /> Contact</button>
+              <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white"><FaEnvelope className="mr-3" /> Contact</button>
             </Link>
           </div>
         </nav>

@@ -63,6 +63,12 @@ export default {
       
     },
     screens: {
+      'h-sm': { 'raw': '(max-height: 640px)' },
+
+      'h-md': { 'raw': '(max-height: 768px)' },
+
+      'h-lg': { 'raw': '(max-height: 1024px)' },
+      
       'sm': '640px',
 
       'mmd': '641px',
@@ -78,7 +84,7 @@ export default {
       '2xl': '1536px',
      
 
-      '3xl': '1700px'
+      '3xl': '1700px',
     }
     ,
     
