@@ -1,0 +1,9 @@
+.sidebar {
+  overflow-y: auto;
+}
+
+@media (min-height: 900px) {
+  .sidebar {
+    overflow-y: hidden;
+  }
+}

@@ -105,8 +105,8 @@ const Home = () => {
                 >
                     <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow h-full mt-8 md:mt-0 mmd:text-center mmd:p-12">
                         <h2 className="text-xl md:text-type xl:text-xl font-semibold text-white inline-flex mt-4 mmd:text-2xl xl:p-2">Full-Stack Development</h2>
-                        <p className="text-gray text-sm md:text-xs xl:text-sm 2xl:text-lg mmd:text-lg">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
-                        <div className="flex space-x-4 md:space-x-6 justify-center mmd:mt-8">
+                        <p className="text-gray text-sm md:text-xs xl:text-sm 2xl:text-lg mmd:text-lg 2xl:mt-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
+                        <div className="flex space-x-4 md:space-x-6 justify-center mmd:mt-8 2xl:mt-16">
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
                                 <FaPython size={40} md:size={60} color="#3776AB" />
                             </motion.div>
