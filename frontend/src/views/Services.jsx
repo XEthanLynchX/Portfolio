@@ -185,7 +185,7 @@ const Services = () => {
               
               {/* Right Column with Text */}
               <div className="flex-1 flex flex-col justify-center items-start p-4 ">
-                <p className="text-xs  mb-2">A Trusted Partner</p>
+                <p className="text-xs text-gray mb-2">A Trusted Partner</p>
                 <h1 className="text-type md:text-xl font-bold text-white mb-4 2xl:text-xl">Why Choose Me</h1>
                 <p className="text-sm mt-4 md:mt-0 text-white mb-8">
                   With knowledge in today's latest technologies, I'm committed to delivering top-notch quality and engaging with you every step of the way.
@@ -195,15 +195,15 @@ const Services = () => {
                 <div className="flex flex-row gap-6 md: md:flex-row justify-between w-full mt-4">
                   <div className="flex flex-col items-center mb-4 md:mb-0 text-center">
                     <p className=" text-base md:text-2xl font-bold text-white">Many</p>
-                    <p className="text-xs md:text-sm ">Years Experience</p>
+                    <p className="text-xs text-gray md:text-sm ">Years Experience</p>
                   </div>
                   <div className="flex flex-col items-center mb-4 md:mb-0 text-center">
                     <p className="text-base md:text-2xl font-bold text-white">10+</p>
-                    <p className="text-xs md:text-sm ">Projects</p>
+                    <p className="text-xs text-gray md:text-sm ">Projects</p>
                   </div>
                   <div className="flex flex-col items-center text-center">
                     <p className="text-base md:text-2xl font-bold text-white">10+</p>
-                    <p className="text-xs md:text-sm ">Technologies Mastered</p>
+                    <p className="text-xs text-gray md:text-sm ">Technologies Mastered</p>
                   </div>
                 </div>
               </div>

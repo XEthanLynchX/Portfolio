@@ -31,7 +31,7 @@ const TypingAnimation = () => {
   }, [text, typingSpeed, loopNum, words]);
 
   return (
-    <p className=" text-gray text-sm  font-semibold text-center ">
+    <p className=" text-gray text-sm font-semibold text-left ">
       {text}
       <span className="blinking-cursor">|</span>
     </p>

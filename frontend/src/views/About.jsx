@@ -32,10 +32,11 @@ const About = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-10 " style={{ textShadow: '8px 6px 4px rgba(0,0,0,0.5)' }}>
-      <TypingAnimation/>
+      <div className=""><TypingAnimation/></div>
       
       
-      <h3 className="text-base sm:w-1/2 lg:w-1/3 text-center mt-2 fade-in text-white" ref={el => sectionsRef.current.push(el)}>I work as a Full-Stack Developer, creating memorable web experiences through robust code and techniques.</h3>
+      
+      
       <img src={laptop} alt="Laptop" className="w-full sm:w-2/3 lg:w-1/2 mt-8 sm:mt-24 rounded border-black  fade-in" ref={el => sectionsRef.current.push(el)} />
 
       <div className="text-left w-full sm:w-2/3 lg:w-1/2 mt-8 sm:mt-16">
