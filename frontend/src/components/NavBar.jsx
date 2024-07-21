@@ -111,7 +111,7 @@ const NavBar = () => {
 
      
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full z-50 pointer-events-auto  overflow-hidden">
+      <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full z-50 pointer-events-auto  overflow-hidden ">
       <div className="text-center mb-6 ">
         <div className="avatar">
           <div className="w-24 h-24 md:w-48 md:h-48 rounded-full ring ring-offset-base-100 ring-offset-2">
@@ -119,7 +119,7 @@ const NavBar = () => {
           </div>
         </div>
         <h2 className="text-lg font-bold text-white">Ethan Lynch</h2>
-        <p className="text-sm">Full-Stack Developer</p>
+        <p className="text-sm border-b-4 p-2 -mt-2 border-shade2">Full-Stack Developer</p>
       </div>
       <div className="icon-container flex space-x-4 mb-5">
         <a href="https://github.com/XEthanLynchX" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
@@ -136,7 +136,7 @@ const NavBar = () => {
         </a>
       </div>
 
-      <nav className="w-full text-base text-white sidebar">
+      <nav className="w-full text-base text-white sidebar ">
         <div className="mt-4 mb-5">
           <Link to="/" className="flex items-center text-lg p-3 " onClick={handleClick}>
             <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">

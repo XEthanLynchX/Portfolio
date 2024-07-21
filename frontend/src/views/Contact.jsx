@@ -17,6 +17,7 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState('');
+  const [isImageVisible, setIsImageVisible] = useState(false);
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const sectionsRef = useRef([]);
@@ -114,12 +115,13 @@ const ContactForm = () => {
     <div className="px-2 py-20 lg:p-10 w-screen">
       <div className="fade-in" ref={el => sectionsRef.current.push(el)}>
         <div className="flex flex-col lg:flex-row w-full lg:px-10 px-3 mx-auto text-left lg:text-left">
-          <div className="lg:w-1/2 w-full lg:pr-10 ">
-
-            <p className="text-sm md:text-base text-gray  ">Contact Me</p>
-            <h2 className="text-type md:text-2xl font-bold text-white mb-8 w-full md:w-4/5">Feel Free to <span className='text-gradient3'>get in touch</span> with me</h2>
+          <div className={`lg:w-2/3 w-full lg:pr-10 items-center justify-center ${isImageVisible ? '' : 'mx-auto'}`}>
+            <p className="text-sm md:text-base text-gray 2xl:text-lg">Contact Me</p>
+            <h2 className="text-type md:text-type  font-bold text-white mb-8 w-full md:w-2/3 xl:text-xl 2xl:text-2xl">
+              Feel Free to <span className='text-gradient3'>get in touch</span> with me
+            </h2>
             
-            <form className="w-full md:w-2/3 " onSubmit={handleSubmit}>
+            <form className="w-full md:w-2/3" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <input
@@ -134,9 +136,8 @@ const ContactForm = () => {
                   {errors.firstName && <p className="text-red text-xs italic">{errors.firstName}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                  
                   <input
-                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="last-name"
                     name="lastName"
                     type="text"
@@ -149,9 +150,8 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                 
                   <input
-                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="country"
                     name="country"
                     type="text"
@@ -162,7 +162,6 @@ const ContactForm = () => {
                   {errors.country && <p className="text-red text-xs italic">{errors.country}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                  
                   <input
                     className="form-control text-white appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="email"
@@ -177,9 +176,8 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                 
                   <input
-                    className="form-control text-white appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="company-name"
                     name="companyName"
                     type="text"
@@ -192,7 +190,6 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                 
                   <select
                     className="form-control appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 text-gray rounded-sm py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="service-type"
@@ -201,7 +198,6 @@ const ContactForm = () => {
                     onChange={handleChange}
                   >
                     <option value="">Select a service</option>
-                    <option value="Basic">Basic Package</option>
                     <option value="Standard">Standard Package</option>
                     <option value="Premium">Premium Package</option>
                     <option value="Custom">Custom Package</option>
@@ -211,9 +207,8 @@ const ContactForm = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                 
                   <textarea
-                    className="form-control text-white no-resize appearance-none block w-full  bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
+                    className="form-control text-white no-resize appearance-none block w-full bg-transparent border-b-2 border-white focus:border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none"
                     id="project-details"
                     name="projectDetails"
                     placeholder="More Details About the Project"
@@ -227,23 +222,19 @@ const ContactForm = () => {
                 <div className="w-full">
                   <button
                     type="submit"
-                    className="w-full h-1/2 px-4 py-1 text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-md hover:shadow-lg font-semibold rounded-sm border  text-white flex justify-center items-center btn-gradient3"
+                    className="w-full h-1/2 px-4 py-1 text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-md hover:shadow-lg font-semibold rounded-sm border text-white flex justify-center items-center btn-gradient3"
                   >
-                    Send
+                     Send
                     <CiPaperplane className="w-6 h-6 ml-2" />
                   </button>
                   {status && <p className={`text-base italic mt-2 ${status.includes('error') ? 'text-red' : 'text-gradient3'}`}>{status}</p>}
-                  
                 </div>
               </div>
             </form>
           </div>
-          <div className="hidden md:flex lg:w-1/3 w-full items-center justify-center lg:pl-10">
-            <img src={mail} alt="Mail Icon" className="w-full h-auto" />
-          </div>
         </div>
-        <FreqQuestions />
       </div>
+      <FreqQuestions /> {/* Place FAQ section directly underneath */}
     </div>
   );
 };

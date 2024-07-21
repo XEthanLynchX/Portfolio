@@ -16,38 +16,40 @@ const FaqSection = () => {
   const [openFaqs, setOpenFaqs] = useState([]);
 
   const handleFaqClick = (index) => {
-    setOpenFaqs(prevOpenFaqs => 
+    setOpenFaqs(prevOpenFaqs =>
       prevOpenFaqs.includes(index) ? prevOpenFaqs.filter(i => i !== index) : [...prevOpenFaqs, index]
     );
   };
 
   return (
-    <div className="lg:py-24 mt-72 text-white" id="faq">
-      <div className="px-8 md:ml-36 md:w-2/3  lg:px-16">
-      <p className="text-base font-bold uppercase sm:mx-6 text-center text-normal  mt-4 text-shade4 ">
+    <div className="mt-20 text-white md:w-3/4" id="faq">
+      <div className="px-8 text-center">
+        <p className="text-base font-bold uppercase  text-center text-normal w-full mt-4 text-shade4">
           FAQS
         </p>
-        <h3 className="mt-1 text-xl font-bold sm:mx-6  md:text-2xl text-center text-white">
-          You Got Questions ?
+        <h3 className="mt-1 text-xl font-bold md:text-xl text-cente text-white">
+          You Got Questions?
         </h3>
-        
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-1 md:gap-6 pt-10 ">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              whileHover={{ scale: 1.04 }}
-              className="w-full py-6 mx-auto mt-10 faq-gradient text-sm  rounded-lg  md:px-8 md:py-8  cursor-pointer"
-              onClick={() => handleFaqClick(index)}
-            >
-              <h3 className="text-md font-bold text-indigo-500 sm:text-xl md:text-xl">{faq.question}</h3>
-              {openFaqs.includes(index) && (
-                <p className="mt-6 text-base   text-white ">{faq.answer}</p>
-              )}
-            </motion.div>
-          ))}
+
+        <div className="flex justify-center pt-10">
+          <div className="grid grid-cols-1 gap-6 w-full md:w-4/5 ">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.04 }}
+                className="w-full py-6 mx-auto mt-10 faq-gradient text-sm rounded-lg md:px-8 md:py-8 cursor-pointer"
+                onClick={() => handleFaqClick(index)}
+              >
+                <h3 className="text-md font-bold text-indigo-500 sm:text-xl md:text-lg">{faq.question}</h3>
+                {openFaqs.includes(index) && (
+                  <p className="mt-6 md:text-xs lg:text-sm xl:text-base text-white">{faq.answer}</p>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

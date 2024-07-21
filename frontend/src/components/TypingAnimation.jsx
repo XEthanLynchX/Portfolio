@@ -7,7 +7,7 @@ const TypingAnimation = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const words = ["Hi there, I'm Ethan Lynch"];
+  const words = ["Nice to meet you!"];
 
   useEffect(() => {
     let timer;
@@ -31,10 +31,10 @@ const TypingAnimation = () => {
   }, [text, typingSpeed, loopNum, words]);
 
   return (
-    <h2 className=" sm:text-type md:text-type xl:text-xl 2xl:text-2xl font-semibold text-white text-center ">
+    <p className=" text-gray text-sm  font-semibold text-center ">
       {text}
       <span className="blinking-cursor">|</span>
-    </h2>
+    </p>
   );
 };
 
