@@ -104,23 +104,23 @@ const Home = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="bg-darkblue text-white p-4 md:p-10 rounded-lg shadow-md hover:shadow-glow h-full mt-8 md:mt-0 mmd:text-center mmd:p-12">
-                        <h2 className="text-base mb-4 md:text-type xl:text-xl font-semibold text-white inline-flex mt-4 mmd:text-type xl:p-2">Full-Stack Development</h2>
-                        <p className="text-gray text-sm md:text-xs xl:text-sm 2xl:text-lg mmd:text-lg  mb-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
-                        <div className="flex space-x-4 md:space-x-6 justify-center mmd:mt-4 2xl:mt-16 lg:-mb-8">
+                        <h2 className="text-base mb-4 md:text-type xl:text-xl xl:-mt-2 font-semibold text-white inline-flex mt-4 mmd:text-type xl:p-2">Full-Stack Development</h2>
+                        <p className="text-gray text-sm md:text-xs xl:text-base  3xl:text-lg mmd:text-lg  mb-8">Full-stack development involves creating both the front-end and back-end of web applications, ensuring seamless user experiences and robust server functionality.</p>
+                        <div className="flex space-x-4 md:space-x-6 justify-center mmd:mt-4 xl:-mt-8 2xl:mt-16 lg:-mb-8 ">
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaPython size={40} md:size={60} color="#3776AB" className='lg:w-6 lg:h-6 xl:w-12 xl:h-12' />
+                                <FaPython size={40} md:size={60} color="#3776AB" className='lg:w-6 lg:h-6 3xl:w-12 3xl:h-12 xl:mt-6 2xl:-mt-8' />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaReact size={40} md:size={60} color="#61DAFB" className='lg:w-6 lg:h-6 xl:w-12 xl:h-12'/>
+                                <FaReact size={40} md:size={60} color="#61DAFB" className='lg:w-6 lg:h-6 3xl:w-12 3xl:h-12 xl:mt-6 2xl:-mt-8'/>
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <FaNodeJs size={40} md:size={60} color="#68A063" className='lg:w-6 lg:h-6 xl:w-12 xl:h-12' />
+                                <FaNodeJs size={40} md:size={60} color="#68A063" className='lg:w-6 lg:h-6 3xl:w-12 3xl:h-12  xl:mt-6 2xl:-mt-8' />
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <SiMysql size={40} md:size={60} color="#4479A1"  className='lg:w-6 lg:h-6 xl:w-12 xl:h-12'/>
+                                <SiMysql size={40} md:size={60} color="#4479A1"  className='lg:w-6 lg:h-6 3xl:w-12 3xl:h-12 xl:mt-6 2xl:-mt-8 '/>
                             </motion.div>
                             <motion.div whileHover={{ scale: 1.5 }} transition={{ duration: 0.3 }}>
-                                <SiMongodb size={40} md:size={60} color="#47A248" className='lg:w-6 lg:h-6 xl:w-12 xl:h-12' />
+                                <SiMongodb size={40} md:size={60} color="#47A248" className='lg:w-6 lg:h-6 3xl:w-12 3xl:h-12 xl:mt-6 2xl:-mt-8' />
                             </motion.div>
                         </div>
                     </div>
