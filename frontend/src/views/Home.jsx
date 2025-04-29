@@ -29,9 +29,10 @@ const TypingEffect = ({ text, className }) => {
   return (
     <span className={`relative inline-block ${className}`}>
       <span className="bg-gradient-to-r from-[#0066FF] to-[#00A3FF] inline-block text-transparent bg-clip-text">
-        {displayText}
+        <span className="hidden sm:inline">{displayText}</span>
+        <span className="inline sm:hidden">{text}</span>
       </span>
-      <span className="absolute -right-[10px] top-4 h-[90%] w-[3px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF] animate-blink"></span>
+      <span className="absolute -right-[10px] top-0 h-full w-[3px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF] animate-blink hidden lg:block"></span>
     </span>
   );
 };
@@ -92,7 +93,7 @@ const ProjectShowcase = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-[2px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF]"></div>
+            <div className="w-10 h-[8px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF]"></div>
             <p className="bg-gradient-to-r from-[#0066FF] to-[#00A3FF] inline-block text-transparent bg-clip-text font-medium text-lg">
               Featured Work
             </p>
@@ -104,36 +105,116 @@ const ProjectShowcase = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Scrolling Projects */}
-          <div className="space-y-32 py-20">
+          <div className="space-y-16 lg:space-y-32 py-20">
             {ProjectData.map((project, index) => (
-              <div
-                key={index}
-                data-index={index}
-                ref={el => projectRefs.current[index] = el}
-                className="h-[60vh] relative"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 20, scale: 0.98 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  viewport={{ once: false, margin: "-10%" }}
-                  className="w-full h-full rounded-lg overflow-hidden relative group shadow-md"
+              <div key={index} className="flex flex-col gap-8">
+                <div
+                  data-index={index}
+                  ref={el => projectRefs.current[index] = el}
+                  className="h-[60vh] relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/60 z-10 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-center transform 
-                    group-hover:scale-105 transition-transform duration-700"
-                  />
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: false, margin: "-10%" }}
+                    className="w-full h-full rounded-lg overflow-hidden relative group shadow-md"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/60 z-10 
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-center transform 
+                      group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </motion.div>
+                </div>
+                
+                {/* Project Text Content - Only visible on mobile/tablet */}
+                <div className="lg:hidden">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: false, margin: "-10%" }}
+                    className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 w-full"
+                  >
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "36px" }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="h-1 bg-gradient-to-r from-[#0066FF] to-[#00A3FF] mb-3"
+                    />
+                    
+                    <div className="flex flex-col gap-1 mb-3">
+                      <h2 className="text-xl font-bold bg-gradient-to-r from-[#0066FF] to-[#00A3FF] text-transparent bg-clip-text">
+                        {project.title}
+                      </h2>
+                      <span className="text-sm text-gray-600">{project.type}</span>
+                    </div>
+
+                    <p className="text-black/75 text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {project.metrics && (
+                      <div className="mb-4">
+                        <ul className="grid grid-cols-1 gap-2">
+                          {project.metrics.slice(0, 2).map((metric, i) => (
+                            <li key={i} className="flex items-center gap-2 text-sm text-black/75">
+                              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00A3FF]" />
+                              {metric}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-gray-100 rounded-full text-xs text-black flex items-center gap-1 border border-gray-200"
+                        >
+                          {techIcons[tech] || <FaCode className="text-[#0066FF] text-xs" />}
+                          <span className="text-xs">{tech}</span>
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-full text-black text-xs border border-gray-200 hover:bg-gray-200 transition-colors duration-300"
+                        >
+                          <FaGithub className="text-sm" />
+                          <span>View Code</span>
+                        </a>
+                      )}
+                      {project.liveDemoUrl && (
+                        <a
+                          href={project.liveDemoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-[#0066FF] to-[#00A3FF] rounded-full text-white text-xs hover:from-[#0052CC] hover:to-[#0080FF] transition-colors duration-300"
+                        >
+                          <FaArrowRight className="text-sm" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Right Column - Scrolling Text Content */}
-          <div className="space-y-32 py-20">
+          {/* Right Column - Scrolling Text Content - Only visible on desktop */}
+          <div className="hidden lg:block space-y-32 py-20">
             {ProjectData.map((project, index) => (
               <div key={index} className="h-[60vh] relative flex items-center">
                 <motion.div
@@ -151,11 +232,11 @@ const ProjectShowcase = () => {
                     className="h-1 bg-gradient-to-r from-[#0066FF] to-[#00A3FF] mb-3"
                   />
                   
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex flex-col gap-1 mb-3">
                     <h2 className="text-xl font-bold bg-gradient-to-r from-[#0066FF] to-[#00A3FF] text-transparent bg-clip-text">
                       {project.title}
                     </h2>
-                    <span className="text-sm text-gray-600">| {project.type}</span>
+                    <span className="text-sm text-gray-600">{project.type}</span>
                   </div>
 
                   <p className="text-black/75 text-sm mb-4 leading-relaxed">
@@ -260,7 +341,7 @@ const Home = () => {
             </div>
             
             {/* Image - Right Side */}
-            <div className="lg:w-1/2 relative mt-12 lg:mt-0 lg:max-w-md">
+            <div className="hidden lg:block lg:w-1/2 relative mt-12 lg:mt-0 lg:max-w-md">
              
               
               <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden bg-white shadow-xl">
@@ -329,8 +410,8 @@ const Home = () => {
               <div className="flex items-center gap-3 mb-4">
                 
               </div>
-              <h2 className="text-3xl md:text-2xl font-bold text-black mb-6">Professional Experience</h2>
-              <div className="w-48 h-1 bg-gradient-to-r from-[#0066FF] to-[#00A3FF]"></div>
+              <h2 className="text-xl md:text-2xl font-bold text-black mb-6">Professional Experience</h2>
+              <div className="w-48 h-[8px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF]"></div>
             </div>
 
             <div className="space-y-12">
@@ -395,8 +476,8 @@ const Home = () => {
             {/* Left Column - About Me Text */}
             <div>
               <div>
-                <h2 className="text-2xl font-bold text-black">About Me</h2>
-                <div className="w-48 h-[10px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF] mb-8"></div>
+                <h2 className="text-xl font-bold text-black">About Me</h2>
+                <div className="w-48 h-[8px] bg-gradient-to-r from-[#0066FF] to-[#00A3FF] mb-8"></div>
 
                 <p className="text-black/80 leading-relaxed mb-6">
                   I'm a passionate software developer and engineer dedicated to building clean, efficient, and user-friendly applications. 
@@ -440,7 +521,7 @@ const Home = () => {
               <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
                 <div className="flex items-center gap-4 mb-6">
                   <FaGraduationCap className="text-2xl text-[#0066FF]" />
-                  <h3 className="text-xl font-semibold text-black">Education</h3>
+                  <h3 className="text-lg font-semibold text-black">Education</h3>
                 </div>
                 <div className="space-y-6">
                   <div className="border-l-4 border-[#0066FF] pl-4">

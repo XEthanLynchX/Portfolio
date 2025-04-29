@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-el"
-  }
+    "default": "portfolio-el",
+    "production": "portfolio-el"
+  },
+  "targets": {},
+  "etags": {}
 }

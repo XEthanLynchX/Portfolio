@@ -34,85 +34,78 @@ const pageTransition = {
 
 function App() {
     const location = useLocation();
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => setLoading(false), 2000); // Reduced loading time further
-    }, []);
 
     return (
         <div className="min-h-screen bg-white font-sans relative">
-            {loading ? <Preloader /> : (
-                <>
-                        <NavBar />
-                    <main className="w-full min-h-screen overflow-x-hidden">
-                    <ScrollToTop />
-                        <AnimatePresence mode="wait">
-                            <Routes location={location} key={location.pathname}>
-                                <Route path="/" element={
-                                    <motion.div
-                                        initial="initial"
-                                        animate="in"
-                                        exit="out"
-                                        variants={pageVariants}
-                                        transition={pageTransition}
-                                    >
-                                        <Home />
-                                    </motion.div>
-                                } />
-                                <Route path="/projects" element={
-                                    <motion.div
-                                        initial="initial"
-                                        animate="in"
-                                        exit="out"
-                                        variants={pageVariants}
-                                        transition={pageTransition}
-                                        className="pt-20"
-                                    >
-                                        <Projects2 />
-                                    </motion.div>
-                                } />
-                                <Route path="/services" element={
-                                    <motion.div
-                                        initial="initial"
-                                        animate="in"
-                                        exit="out"
-                                        variants={pageVariants}
-                                        transition={pageTransition}
-                                        className="pt-20"
-                                    >
-                                        <Services />
-                                    </motion.div>
-                                } />
-                                <Route path="/about" element={
-                                    <motion.div
-                                        initial="initial"
-                                        animate="in"
-                                        exit="out"
-                                        variants={pageVariants}
-                                        transition={pageTransition}
-                                        className="pt-20"
-                                    >
-                                        <About />
-                                    </motion.div>
-                                } />
-                                <Route path="/contact" element={
-                                    <motion.div
-                                        initial="initial"
-                                        animate="in"
-                                        exit="out"
-                                        variants={pageVariants}
-                                        transition={pageTransition}
-                                        className="pt-20"
-                                    >
-                                        <Contact />
-                                    </motion.div>
-                                } />
-                            </Routes>
-                        </AnimatePresence>
-                    </main>
-                </>
-            )}
+            <>
+                    <NavBar />
+                <main className="w-full min-h-screen overflow-x-hidden">
+                <ScrollToTop />
+                    <AnimatePresence mode="wait">
+                        <Routes location={location} key={location.pathname}>
+                            <Route path="/" element={
+                                <motion.div
+                                    initial="initial"
+                                    animate="in"
+                                    exit="out"
+                                    variants={pageVariants}
+                                    transition={pageTransition}
+                                >
+                                    <Home />
+                                </motion.div>
+                            } />
+                            <Route path="/projects" element={
+                                <motion.div
+                                    initial="initial"
+                                    animate="in"
+                                    exit="out"
+                                    variants={pageVariants}
+                                    transition={pageTransition}
+                                    className="pt-20"
+                                >
+                                    <Projects2 />
+                                </motion.div>
+                            } />
+                            <Route path="/services" element={
+                                <motion.div
+                                    initial="initial"
+                                    animate="in"
+                                    exit="out"
+                                    variants={pageVariants}
+                                    transition={pageTransition}
+                                    className="pt-20"
+                                >
+                                    <Services />
+                                </motion.div>
+                            } />
+                            <Route path="/about" element={
+                                <motion.div
+                                    initial="initial"
+                                    animate="in"
+                                    exit="out"
+                                    variants={pageVariants}
+                                    transition={pageTransition}
+                                    className="pt-20"
+                                >
+                                    <About />
+                                </motion.div>
+                            } />
+                            <Route path="/contact" element={
+                                <motion.div
+                                    initial="initial"
+                                    animate="in"
+                                    exit="out"
+                                    variants={pageVariants}
+                                    transition={pageTransition}
+                                    className="pt-20"
+                                >
+                                    <Contact />
+                                </motion.div>
+                            } />
+                        </Routes>
+                    </AnimatePresence>
+                </main>
+            </>
         </div>
     );
 }

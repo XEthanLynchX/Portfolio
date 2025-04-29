@@ -18,17 +18,22 @@ const NavBar = () => {
 
       // Update active section based on scroll position
       const sections = ['home', 'projects', 'experience', 'about', 'stack'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
+      let currentSection = 'home';
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
+            currentSection = section;
             break;
           }
         }
+      }
+      
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
       }
     };
 

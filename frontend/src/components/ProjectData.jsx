@@ -37,7 +37,7 @@ export const ProjectData = [
   },
   {
     id: 2,
-    title: "MoveMetrics",
+    title: "Move-Metrics",
     type: "Full-Stack",
     description: "An Application that allows users to log and track their workouts. In order to keep track of progression throughout their fitness journey.",
     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
@@ -51,7 +51,7 @@ export const ProjectData = [
   },
   {
     id: 3,
-    title: "PuddleJumpers",
+    title: "Puddle-Jumpers",
     type: "E-commerce",
     description: "Puddle Jumpers is an adorable children's store in downtown Exeter, New Hampshire, offering unique and stylish baby clothes and kids' apparel since 1989.",
     technologies: ['Figma', 'Liquid', 'Shopify'],
