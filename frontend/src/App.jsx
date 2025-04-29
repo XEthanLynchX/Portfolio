@@ -8,45 +8,28 @@ import Services from './views/Services';
 import About from './views/About';
 import Contact from './views/Contact';
 import './index.css';
-import BackgroundWithHoverEffect from './components/Bg';
 import ScrollToTop from './components/ScrollToTop';
-import Projects2 from './views/Projects2'
-
+import Projects2 from './views/Projects2';
 
 const pageVariants = {
     initial: {
         opacity: 0,
-        x: "-100vw"
+        y: 20
     },
     in: {
         opacity: 1,
-        x: 0
+        y: 0
     },
     out: {
         opacity: 0,
-        x: "100vw"
-    }
-};
-
-const NavBarVariants = {
-    initial: {
-        opacity: 0,
-        x: "-100vw"
-    },
-    in: {
-        opacity: 1,
-        x: 0
-    },
-    out: {
-        opacity: 0,
-        x: "100vw"
+        y: -20
     }
 };
 
 const pageTransition = {
     type: "tween",
-    ease: "anticipate",
-    duration: 0.5
+    ease: "easeInOut",
+    duration: 0.4
 };
 
 function App() {
@@ -54,22 +37,18 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => setLoading(false), 4000); // Example timeout, adjust as needed
+        setTimeout(() => setLoading(false), 2000); // Reduced loading time further
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row min-h-screen font-sans">
+        <div className="min-h-screen bg-white font-sans relative">
             {loading ? <Preloader /> : (
                 <>
-                    <BackgroundWithHoverEffect />
-                    <div className="w-full  md:w-72 z-10 md:static fixed pointer-events-none ">
                         <NavBar />
-                    </div>
-                    <div className="flex-grow min-h-screen overflow-x-hidden overflow-y-auto md:w-4/5 sm: mt-32 md:mt-0  ">
+                    <main className="w-full min-h-screen overflow-x-hidden">
                     <ScrollToTop />
                         <AnimatePresence mode="wait">
                             <Routes location={location} key={location.pathname}>
-                                
                                 <Route path="/" element={
                                     <motion.div
                                         initial="initial"
@@ -88,6 +67,7 @@ function App() {
                                         exit="out"
                                         variants={pageVariants}
                                         transition={pageTransition}
+                                        className="pt-20"
                                     >
                                         <Projects2 />
                                     </motion.div>
@@ -99,6 +79,7 @@ function App() {
                                         exit="out"
                                         variants={pageVariants}
                                         transition={pageTransition}
+                                        className="pt-20"
                                     >
                                         <Services />
                                     </motion.div>
@@ -110,6 +91,7 @@ function App() {
                                         exit="out"
                                         variants={pageVariants}
                                         transition={pageTransition}
+                                        className="pt-20"
                                     >
                                         <About />
                                     </motion.div>
@@ -121,13 +103,14 @@ function App() {
                                         exit="out"
                                         variants={pageVariants}
                                         transition={pageTransition}
+                                        className="pt-20"
                                     >
                                         <Contact />
                                     </motion.div>
                                 } />
                             </Routes>
                         </AnimatePresence>
-                    </div>
+                    </main>
                 </>
             )}
         </div>

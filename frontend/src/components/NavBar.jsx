@@ -1,182 +1,226 @@
 import React, { useState, useEffect } from 'react';
-import { FaGithub,  FaLinkedin, FaInstagram, FaFileAlt, FaHome, FaProjectDiagram, FaUserAlt, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
-import { CgToolbox } from 'react-icons/cg';
-import { Link } from 'react-router-dom';
-import "../styling/navbar.css"
-import pfp from '../media/pfp.jpg';
+import { Link, useLocation } from 'react-router-dom';
+import { FaCode } from 'react-icons/fa';
+import '../styling/navbar.css';
 
 const NavBar = () => {
-  const [openNavigation, setOpenNavigation] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [isHeightBelow924, setIsHeightBelow924] = useState(false);
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
+  // Handle scroll effect
   useEffect(() => {
-    const handleResize = () => {
-      setIsHeightBelow924(window.innerHeight < 924);
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+
+      // Update active section based on scroll position
+      const sections = ['home', 'projects', 'experience', 'about', 'stack'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
-   
-    handleResize();
-
-    
-    window.addEventListener('resize', handleResize);
-
-    
+    document.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [scrolled]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Height of the fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-  const toggleNavigation = () => {
-    setOpenNavigation(!openNavigation);
-  };
-
-  const handleClick = () => {
-    if (openNavigation) {
-      setOpenNavigation(false);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const formattedTime = currentTime.toLocaleTimeString();
-
   return (
-    <div className="md:sticky sm:fixed top-0 h-screen w-full text-white">
-      {/* Header Section */}
-      <div className="flex items-center justify-between p-5 bg-darkblue md:hidden">
-        <div className="flex items-center">
-          <img src={pfp} alt="Profile" className="w-1/4 rounded-full mr-3" />
-          <div>
-            <h2 className="text-lg font-bold text-white">Ethan Lynch</h2>
-            <p className="text-sm ">Full-Stack Developer</p>
+    <header className={`top-navbar fixed w-full px-6 py-4 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-white py-4'
+    }`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <a 
+          href="#home" 
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('home');
+          }}
+          className="logo-container"
+        >
+          <div className="logo-icon">
+            <FaCode />
           </div>
-        </div>
-        <button onClick={toggleNavigation} className="text-white mr-2 text-sm pointer-events-auto ">
-          {openNavigation ? <FaTimes /> : <FaBars />}
+          <span>EthanDev</span>
+        </a>
+
+        {/* Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <a 
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('home');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'home' ? 'active' : ''}`}
+          >
+            Home
+          </a>
+          <a 
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('projects');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'projects' ? 'active' : ''}`}
+          >
+            Projects
+          </a>
+          <a 
+            href="#experience"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('experience');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'experience' ? 'active' : ''}`}
+          >
+            Experience
+          </a>
+          <a 
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('about');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'about' ? 'active' : ''}`}
+          >
+            About
+          </a>
+          <a 
+            href="#stack"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('stack');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'stack' ? 'active' : ''}`}
+          >
+            Stack
+          </a>
+        </nav>
+     
+        {/* CTA Button */}
+        <a 
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('contact');
+          }}
+          className="talk-button hidden md:block px-6 py-2.5 font-medium text-sm"
+        >
+          Let's Talk
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-gray-600 focus:outline-none"
+          onClick={() => document.getElementById('mobile-menu').classList.toggle('hidden')}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div className={` top-24 left-0 w-full bg-darkblue transition-all duration-500 ease-in-out ${openNavigation ? 'h-full' : 'h-0'} overflow-hidden md:hidden pointer-events-auto`}>
-        <nav className="w-full text-base p-5 text-white">
-          <div className="mt-4 text-white">
-            <Link to="/" className="flex items-center -mt-6 text-lg p-3 hover:bg-Fgh-700 mb-5" onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white"><FaHome className="mr-3" /> Home</button>
-            </Link>
-          </div>
-          <div className="mb-5 text-white">
-            <Link to="/projects" className="flex items-center text-lg p-3 bg-gradient-to-br from-gradient1to-blue-500 hover:bg-gradient-to-bl" onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white"><FaProjectDiagram className="mr-3" /> Projects</button>
-            </Link>
-          </div>
-          <div className="mb-5 text-white">
-            <Link to="/services" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white"><CgToolbox className="mr-3" /> Services</button>
-            </Link>
-          </div>
-          <div className="mb-5 text-white">
-            <Link to="/about" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white"><FaUserAlt className="mr-3" /> About</button>
-            </Link>
-          </div>
-          <div className="mb-5 text-white">
-            <Link to="/contact" className="flex items-center text-lg p-3 " onClick={handleClick}>
-              <button className="btn btn-outline w-full text-white"><FaEnvelope className="mr-3" /> Contact</button>
-            </Link>
-          </div>
-          {/* Social Media Links in Mobile Navigation */}
-          <div className="flex justify-center space-x-4 mt-5">
-            <a href="https://github.com/XEthanLynchX" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-              <FaGithub className="text-xl text-white hover:text-black" />
-            </a>
-            <a href="https://www.linkedin.com/in/ethan-lynch-04a188255" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-              <FaLinkedin className="text-xl text-white hover:text-primary" />
-            </a>
-            <a href="https://www.instagram.com/ethan_lynch123" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-              <FaInstagram className="text-xl text-white hover:text-purple" />
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-              <FaFileAlt className="text-xl text-white hover:text-yellow" />
-            </a>
-          </div>
+      {/* Mobile Menu */}
+      <div id="mobile-menu" className="hidden md:hidden w-full absolute left-0 bg-white shadow-lg py-4 px-6 mt-4">
+        <nav className="flex flex-col space-y-4">
+          <a 
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('home');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'home' ? 'active' : ''}`}
+          >
+            Home
+          </a>
+          <a 
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('projects');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'projects' ? 'active' : ''}`}
+          >
+            Projects
+          </a>
+          <a 
+            href="#experience"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('experience');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'experience' ? 'active' : ''}`}
+          >
+            Experience
+          </a>
+          <a 
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('about');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'about' ? 'active' : ''}`}
+          >
+            About
+          </a>
+          <a 
+            href="#stack"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('stack');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className={`nav-link px-2 py-1 ${activeSection === 'stack' ? 'active' : ''}`}
+          >
+            Stack
+          </a>
+          <a 
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+              document.getElementById('mobile-menu').classList.add('hidden');
+            }}
+            className="talk-button w-full text-center px-6 py-2.5 font-medium text-sm"
+          >
+            Let's Talk
+          </a>
         </nav>
       </div>
-
-     
-      {/* Desktop Sidebar */}
-      <div className="hidden md:flex md:flex-col md:items-center p-5 bg-darkblue h-full z-50 pointer-events-auto  overflow-hidden ">
-      <div className="text-center mb-6 ">
-        <div className="avatar">
-          <div className="w-24 h-24 md:w-48 md:h-48 rounded-full ring ring-offset-base-100 ring-offset-2">
-            <img src={pfp} alt="Profile" className="w-full h-full rounded-full mb-3" />
-          </div>
-        </div>
-        <h2 className="text-lg font-bold text-white">Ethan Lynch</h2>
-        <p className="text-sm border-b-4 p-2 -mt-2 border-shade2">Full-Stack Developer</p>
-      </div>
-      <div className="icon-container flex space-x-4 mb-5">
-        <a href="https://github.com/XEthanLynchX" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-          <FaGithub className="text-xl text-white hover:text-black" />
-        </a>
-        <a href="https://www.linkedin.com/in/ethan-lynch-04a188255" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-          <FaLinkedin className="text-xl text-white hover:text-primary" />
-        </a>
-        <a href="https://www.instagram.com/ethan_lynch123" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-          <FaInstagram className="text-xl text-white hover:text-purple" />
-        </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-125">
-          <FaFileAlt className="text-xl text-white hover:text-yellow" />
-        </a>
-      </div>
-
-      <nav className="w-full text-base text-white sidebar ">
-        <div className="mt-4 mb-5">
-          <Link to="/" className="flex items-center text-lg p-3 " onClick={handleClick}>
-            <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">
-              <FaHome className="mr-3" /> Home
-            </button>
-          </Link>
-        </div>
-        <div className="mb-5">
-          <Link to="/projects" className="flex items-center text-lg p-3 " onClick={handleClick}>
-            <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">
-              <FaProjectDiagram className="mr-3" /> Projects
-            </button>
-          </Link>
-        </div>
-        <div className="mb-5">
-          <Link to="/services" className="flex items-center text-lg p-3 " onClick={handleClick}>
-            <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">
-              <CgToolbox className="mr-3" /> Services
-            </button>
-          </Link>
-        </div>
-        <div className="mb-5">
-          <Link to="/about" className="flex items-center text-lg p-3 " onClick={handleClick}>
-            <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">
-              <FaUserAlt className="mr-3" /> About
-            </button>
-          </Link>
-        </div>
-        <div className="mb-5">
-          <Link to="/contact" className="flex items-center text-lg p-3 " onClick={handleClick}>
-            <button className="btn btn-outline w-full text-white hover:bg-gradient2 hover:text-white">
-              <FaEnvelope className="mr-3" /> Contact
-            </button>
-          </Link>
-        </div>
-      </nav>
-      <p className="text-white font-bold text-xs">Local Time: {formattedTime}</p>
-      <p className="text-white font-bold text-xs">Kennesaw, Georgia</p>
-    </div>
-    </div>
+    </header>
   );
 };
 

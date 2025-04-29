@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styling/typingcursor.css';
+import '../styling/typingCursor.css';
 
 const TypingAnimation = () => {
   const [text, setText] = useState('');
@@ -31,9 +31,9 @@ const TypingAnimation = () => {
   }, [text, typingSpeed, loopNum, words]);
 
   return (
-    <p className=" text-gray text-sm font-semibold text-left ">
+    <p className="text-gray text-sm font-semibold text-left">
       {text}
-      <span className="blinking-cursor">|</span>
+      <span className="typing-cursor">|</span>
     </p>
   );
 };

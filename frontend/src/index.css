@@ -126,3 +126,30 @@ body, html {
   pointer-events: auto; /* Re-enable pointer events for the content inside the navbar */
 }
 
+/* Add this at the end of the file */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Add this animation for the gradient background */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 7s ease infinite;
+}
+
