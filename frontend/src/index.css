@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444444 #1a1a1a;
+}
 
 a {
   font-weight: 500;
@@ -28,7 +31,6 @@ h1 {
   line-height: 1.1;
 }
 
-
 button:hover {
   border-color: #646cff;
 }
@@ -36,8 +38,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-
 
 .flex {
   display: flex;
@@ -54,7 +54,6 @@ button:focus-visible {
 .h-full {
   height: 100%;
 }
-
 
 /* index.css */
 body {
@@ -78,17 +77,9 @@ body {
   height: 100%;
 }
 
-
-
-
 .md\\:col-span-2 {
   grid-column: span 1 / span 2;
 }
-
-
-/* Additional custom styles if needed */
-
-
 
 .numberf{
   position: sticky;
@@ -117,7 +108,6 @@ body, html {
 }
 
 .navbar {
-
    /* Example z-index */
   pointer-events: none; /* Prevents the navbar from blocking pointer events */
 }

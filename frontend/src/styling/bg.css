@@ -44,3 +44,46 @@
   }
 }
 
+/* Particle container styling */
+#tsparticles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0 !important;
+  overflow: visible;
+}
+
+/* Ensure the particle container in Home is visible */
+#home .absolute.inset-0.w-full.h-full {
+  overflow: visible;
+  pointer-events: auto;
+  z-index: 0 !important;
+}
+
+/* Hero section styling */
+#home {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  min-height: 500px; /* Ensure minimum height for particle effect */
+}
+
+/* Ensure all content stays above particles */
+#home > *:not(:nth-child(2)) {
+  position: relative;
+  z-index: 10;
+}
+
+/* Make particle container fill the entire space */
+#home > div:nth-child(2) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+

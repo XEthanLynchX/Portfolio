@@ -6,6 +6,7 @@ import { SiJavascript, SiReact, SiNodedotjs, SiTailwindcss, SiFlask, SiExpress, 
 import pfp from '../media/pfp.jpg';
 import '../styling/bg.css';
 import { ProjectData } from '../components/ProjectData';
+import ParticleBackground from '../components/ParticleBackground';
 
 const TypingEffect = ({ text, className }) => {
   const [displayText, setText] = useState('');
@@ -406,28 +407,18 @@ const TechSection = () => {
   );
 };
 
-const BackgroundAnimation = () => {
-  return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      {/* Animated gradient circles */}
-      <div className="absolute top-[5%] left-[10%] w-64 h-64 bg-[#0066FF]/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute top-[30%] right-[15%] w-72 h-72 bg-[#00A3FF]/10 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-[10%] left-[20%] w-56 h-56 bg-[#0066FF]/10 rounded-full blur-3xl animate-pulse-delay"></div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
-    </div>
-  );
-};
-
 const Home = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
-        <section id="home" className="py-16 md:py-20 relative overflow-hidden">
+        <section id="home" className="py-16 md:py-20 relative overflow-visible">
           <div className="absolute top-0 left-0 w-32 h-1 bg-[#4776E6]"></div>
-          <BackgroundAnimation />
+          
+          {/* Full-width/height particle background */}
+          <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+            <ParticleBackground />
+          </div>
           
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 md:gap-16 relative z-10">
             {/* Text Content - Center aligned on mobile */}
