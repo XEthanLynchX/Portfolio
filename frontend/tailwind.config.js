@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/components/**/*.jsx", "./src/views/**/*.jsx", "./src/**/*.jsx"], //you have to add the path to every folder you use tailwind classes
+  darkMode: 'class',
   theme: {
     colors: {
       'blue': '#4169E1',
@@ -102,8 +103,28 @@ export default {
       boxShadow: {
         'glow': '0 4px 15px rgba(96, 130, 182, 0.8)', // Adjust the color and size as needed
       },
-
-      
+      animation: {
+        'pulse': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-slow': 'pulse 12s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-delay': 'pulse 10s 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'blink': 'blink 1s step-end infinite',
+      },
+      keyframes: {
+        pulse: {
+          '0%, 100%': { opacity: 0.4, transform: 'scale(1)' },
+          '50%': { opacity: 0.8, transform: 'scale(1.1)' },
+        },
+        blink: {
+          'from, to': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+      },
+      backgroundImage: {
+        'grid-pattern': "linear-gradient(to right, #a0aec0 1px, transparent 1px), linear-gradient(to bottom, #a0aec0 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        'grid-pattern': '40px 40px',
+      },
     },
 
     

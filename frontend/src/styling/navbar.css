@@ -143,6 +143,7 @@
 
 .talk-button:hover {
   background: #3a67d4;
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(71, 118, 230, 0.3);
 }
