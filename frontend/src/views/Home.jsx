@@ -413,7 +413,7 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
         <section id="home" className="py-16 md:py-20 relative overflow-visible">
-          <div className="absolute top-0 left-0 w-32 h-1 bg-[#4776E6]"></div>
+          <div className="absolute top-0 left-0 w-32 h-1  hidden lg:block"></div>
           
           {/* Full-width/height particle background */}
           <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
