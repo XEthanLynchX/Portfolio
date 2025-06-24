@@ -13,7 +13,7 @@ export const ProjectData = [
     description: "A user-friendly and intuitive Pokemon management application allowing users to organize and interact with their collection of captured Pokemon effectively.",
     technologies: ['React', 'Axios', 'Flask', 'MySQL'],
     imageUrl: pokemonImg,
-    githubUrl: "https://github.com/yourusername/pokemon-handheld",
+    githubUrl: "https://github.com/Skylarsj/Dojo-Group",
     liveDemoUrl: "https://www.youtube.com/watch?v=YjYFz6mf0vU&t=3s",
     features: [
       {
